@@ -1,0 +1,43 @@
+.mobile_nav {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 2rem;
+    background-color: var(--clr-white);
+}
+
+.mobile_nav.active {
+    transform: translateX(0);
+}
+
+.mobile_list {
+    display: flex;
+    gap: 2rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+
+    & li {
+        position: relative;
+    }
+
+    & li::before {
+        content: '';
+        position: absolute;
+        bottom: -9px;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: var(--clr-black);
+        transform: scaleX(0);
+    }
+
+    & li:hover::before {
+        transform: scaleX(1);
+    }
+}

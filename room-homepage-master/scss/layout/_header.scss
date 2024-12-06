@@ -9,18 +9,72 @@
     width: 100%;
     background-size: 100% auto;
 
-
+    @media(min-width: 768px) {
+       background: url(/room-homepage-master/images/desktop-image-hero-1.jpg) no-repeat center center/cover;
+       flex: 2;
+       
+       display: flex;
+       gap: 2.5rem;
+       align-items: flex-start;
+    }
 
     &__toggle {
         display: flex;
         position: absolute;
         bottom: 0;
         right: 0;
+
+        @media(min-width: 768px) {
+            right: -7.4rem;
+
+        }
     }
 
     &__arrow {
-        width: 2.5rem;
-        padding: 1rem;
+        width: 3.7rem;
+        padding: 1.5rem;
         background-color: var(--clr-black);
+
+    }
+
+    &__list {
+        display: flex;
+        gap: 1rem;
+        color: var(--clr-white);
+        font-weight: 600;
+
+        & li {
+            position: relative;
+        }
+
+        & li::before {
+            content: '';
+            position: absolute;
+            bottom: -9px;
+            left: 25%;
+            width: 50%;
+            height: 2px;
+            background-color: var(--clr-white);
+            transform: scaleX(0);
+        }
+
+        & li:hover::before {
+            transform: scaleX(1);
+        }
     }
 }
+
+.one, .two {
+    position: relative;
+}
+
+.one:hover::after, .two:hover::after {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    background: white;
+    border-radius: inherit;
+    opacity: 0.25;
+}
+
