@@ -290,10 +290,10 @@ input:focus {
   color: var(--clr-gray);
 }
 .section1__link::after {
-  content: url("./images/icon-arrow.svg");
+  content: url("/images/icon-arrow.svg");
 }
 .section1__link:hover::after {
-  content: url("./images/icon-arrow-hover.svg");
+  content: url("/images/icon-arrow-hover.svg");
 }
 
 .section2 {
