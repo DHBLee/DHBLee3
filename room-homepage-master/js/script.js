@@ -44,6 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleHero(arrow, sectionOne, slidesData);
         })
     })
+
+    updateSectionContent(currentSlide, sectionOne, slidesData);
 })
 
 function toggleNav(mobileNav) {

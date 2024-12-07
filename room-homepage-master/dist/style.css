@@ -107,13 +107,13 @@ input:focus {
   padding-inline: 2rem;
   padding-top: 3rem;
   padding-bottom: 21rem;
-  background: url(/room-homepage-master/images/mobile-image-hero-1.jpg) no-repeat center center/cover;
+  background: url(./room-homepage-master/images/mobile-image-hero-1.jpg) no-repeat center center/cover;
   width: 100%;
   background-size: 100% auto;
 }
 @media (min-width: 768px) {
   .header {
-    background: url(/room-homepage-master/images/desktop-image-hero-1.jpg) no-repeat center center/cover;
+    background: url(./room-homepage-master/images/desktop-image-hero-1.jpg) no-repeat center center/cover;
     flex: 2;
     display: flex;
     gap: 2.5rem;
@@ -290,10 +290,10 @@ input:focus {
   color: var(--clr-gray);
 }
 .section1__link::after {
-  content: url("/room-homepage-master/images/icon-arrow.svg");
+  content: url("./room-homepage-master/images/icon-arrow.svg");
 }
 .section1__link:hover::after {
-  content: url("/room-homepage-master/images/icon-arrow-hover.svg");
+  content: url("./room-homepage-master/images/icon-arrow-hover.svg");
 }
 
 .section2 {
