@@ -71,11 +71,11 @@
             color: var(--clr-gray);
         }
         &::after {
-            content: url('./room-homepage-master/images/icon-arrow.svg');
+            content: url('./images/icon-arrow.svg');
         }
 
         &:hover::after {
-            content: url('./room-homepage-master/images/icon-arrow-hover.svg');
+            content: url('./images/icon-arrow-hover.svg');
         }
 
     }
