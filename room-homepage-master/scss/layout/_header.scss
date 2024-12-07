@@ -1,0 +1,26 @@
+.header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    position: relative;
+    padding-inline:2rem;
+    padding-top: 3rem;
+    padding-bottom: 21rem;
+    background: url(/room-homepage-master/images/mobile-image-hero-1.jpg) no-repeat center center/cover;
+    width: 100%;
+    background-size: 100% auto;
+
+
+
+    &__toggle {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    &__arrow {
+        width: 2.5rem;
+        padding: 1rem;
+        background-color: var(--clr-black);
+    }
+}
