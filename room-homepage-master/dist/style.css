@@ -129,6 +129,7 @@ input:focus {
 @media (min-width: 768px) {
   .header__toggle {
     right: -7.4rem;
+    z-index: 4;
   }
 }
 .header__arrow {
@@ -230,6 +231,8 @@ input:focus {
   position: relative;
   overflow-x: hidden;
   display: grid;
+  max-width: 100%;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .main {
@@ -266,8 +269,6 @@ input:focus {
 }
 @media (min-width: 768px) {
   .section1 {
-    position: relative;
-    z-index: -2;
     flex: 1;
   }
 }
