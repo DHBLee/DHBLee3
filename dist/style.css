@@ -112,14 +112,17 @@ input:focus {
   display: flex;
   align-items: center;
   gap: 2rem;
+  letter-spacing: 0.1rem;
+  font-size: 0.7rem;
 }
-.header__list btn {
+.header__list button {
   border: 2px solid transparent;
-  padding: 1rem;
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
   background-color: var(--clr-red);
   color: white;
 }
-.header__list btn:hover {
+.header__list button:hover {
   border-color: var(--clr-red);
   background-color: white;
   color: var(--clr-red);
@@ -174,6 +177,12 @@ input:focus {
   }
 }
 
+@media (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+}
+
 .wrapper__img, .wrapper2__img {
   position: relative;
   margin: 1rem 0;
@@ -207,6 +216,19 @@ input:focus {
   align-items: center;
   text-align: center;
   gap: 2rem;
+}
+@media (min-width: 768px) {
+  .section1 {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .section1__wrapper {
+    flex: 1;
+  }
+  .section1 .wrapper__img {
+    flex: 1.5;
+  }
 }
 .section1__wrapper {
   display: grid;
@@ -263,6 +285,12 @@ input:focus {
 .section2__wrapper2 {
   display: grid;
   gap: 2rem;
+}
+@media (min-width: 768px) {
+  .section2__wrapper2 {
+    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
+  }
 }
 .section2__wrapper2__wrapper {
   display: grid;
