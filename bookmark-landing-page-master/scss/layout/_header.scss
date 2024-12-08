@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1.5rem;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        btn {
+            border: 2px solid transparent;
+            padding: 1rem;
+            background-color: var(--clr-red);
+            color: white;
+
+            &:hover {
+                border-color: var(--clr-red);
+                background-color: white;
+                color: var(--clr-red);
+            }
+        }
+    }
+}
