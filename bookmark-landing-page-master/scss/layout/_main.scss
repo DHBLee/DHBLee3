@@ -404,10 +404,6 @@
             color: rgb(197, 194, 194);
         }
 
-        &::after {
-            content: url("/bookmark-landing-page-master/images/icon-error.svg");
-        }
-
         &__error {
             border: 2px solid var(--clr-red);
             background-image: url('/bookmark-landing-page-master/images/icon-error.svg');

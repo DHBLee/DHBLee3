@@ -544,9 +544,6 @@ input:focus {
   font-size: 0.7rem;
   color: rgb(197, 194, 194);
 }
-.section5__input::after {
-  content: url("/bookmark-landing-page-master/images/icon-error.svg");
-}
 .section5__input__error {
   border: 2px solid var(--clr-red);
   background-image: url("/bookmark-landing-page-master/images/icon-error.svg");
