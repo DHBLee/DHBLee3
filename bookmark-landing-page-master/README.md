@@ -44,8 +44,8 @@ Users should be able to:
 ### Links
 
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/DHBLee/DHBLee3/tree/DHBLee/Fronend-Mentor/Bookmark)
+- Live Site URL: [Add live site URL here](https://dhb-lee3-c11j.vercel.app/)
 
 
 ## My process
@@ -64,7 +64,7 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - JS
--SCSS
+- SCSS
 
 
 
