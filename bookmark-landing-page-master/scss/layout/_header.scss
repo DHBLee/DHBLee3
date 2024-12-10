@@ -3,7 +3,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 1.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 
     &__list {
         display: flex;
@@ -12,6 +13,9 @@
         letter-spacing: 0.1rem;
         font-size: 0.7rem;
 
+        li:hover {
+            color: var(--clr-red);
+        }
         button {
             border: 2px solid transparent;
             padding: 0.5rem 2rem;

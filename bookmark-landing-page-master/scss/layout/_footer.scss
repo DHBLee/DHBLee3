@@ -8,9 +8,32 @@
     text-align: center;
     background-color: var(--clr-darkblue);
 
+    @media(min-width:768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-inline: 2rem;
+    }
+
+    @media(min-width: 1024px) {
+        padding-inline: 3rem;
+    }
+
+    @media(min-width: 1220px) {
+        padding-inline: 4rem;
+    }
+
+    @media(min-width: 1440px) {
+        padding-inline: 5rem;
+    }
+
     &__one {
         display: grid;
         gap: 1.5rem;
+
+        @media(min-width: 768px) {
+            display: flex;
+            align-items: center;
+        }
     }
 
     &__list {
@@ -18,6 +41,10 @@
         gap: 1rem;
         color: white;
         letter-spacing: 0.1rem;
+
+        @media(min-width: 768px) {
+            display: flex;
+        }
 
         & li:hover {
             color: var(--clr-red);
