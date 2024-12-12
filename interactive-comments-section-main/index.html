@@ -5,7 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../dist/style.css">
+  <script src="js/script.js"></script>
+
   <title>Frontend Mentor | Interactive comments section</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -17,7 +23,28 @@
 <body>
 
   <!-- Pull dynamic content from the data.json file -->
-  
+  <main class="main">
+    <div class="main__comments">
+      <div class="main__profile">
+        <img class="main__picture" src="./images/avatars/image-amyrobson.webp" alt="">
+        <h6 class="main__username">amyrobson</h6>
+        <h6 class="main__date">1 month ago</h6>
+      </div>
+
+      <p class="main__comment">
+        Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.
+      </p>
+
+      <div class="main__toggle">
+        <div class="main__like">
+          <button class="main__plus">+</button>
+          <span class="main__likecount">12</span>
+          <button class="main__minus">-</button>
+        </div>
+        <span class="main__reply">Reply</span>
+      </div>
+    </div>
+  </main>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.

@@ -1,0 +1,78 @@
+.main {
+    display: grid;
+    gap: 1rem;
+    margin: 1rem 0.5rem;
+
+    &__comments {
+        display: grid;
+        gap: 1rem;
+        padding: 1rem 0.5rem;
+        background-color: var(--clr-white);
+        border-radius: 5px;
+    }
+
+    &__replies {
+        margin-left: 0.5rem;
+    }
+
+    &__profile {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    &__picture {
+        border-radius: 50%;
+        width: 1.5rem;
+    }
+
+    &__username {
+        color: var(--clr-darkblue);
+        font-weight: 500;
+        font-size: clamp(0.67rem, 0.5935714285714286rem + 0.38214285714285706vw, 0.9375rem);
+    }
+
+    &__date, &__comment {
+        color: var(--clr-grayblue);
+        font-size: clamp(0.67rem, 0.5935714285714286rem + 0.38214285714285706vw, 0.9375rem);
+    }
+
+    &__toggle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__like {
+        background-color: var(--clr-gray);
+        padding: 0.3rem;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: clamp(0.8rem, 0.6714285714285715rem + 0.6428571428571428vw, 1.25rem);
+        display: flex;
+        width: max-content;
+        gap: 1rem;
+
+    }
+
+    &__likecount {
+        color: var(--clr-blue);
+    }
+
+    &__plus, &__minus {
+        color: var(--clr-grayblue);
+    }
+
+    &__reply {
+        color: var(--clr-blue);
+        font-weight: 500;
+        font-size: clamp(0.8rem, 0.6714285714285715rem + 0.6428571428571428vw, 1.25rem);
+
+        display: flex;
+        gap: 0.5rem;
+    
+        &::before {
+            content: url('/interactive-comments-section-main/images/icon-reply.svg');
+        }
+    }
+}
