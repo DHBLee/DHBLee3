@@ -61,9 +61,11 @@
 
     &__plus, &__minus {
         color: var(--clr-grayblue);
+        cursor: pointer;
     }
 
     &__reply {
+        cursor: pointer;
         color: var(--clr-blue);
         font-weight: 500;
         font-size: clamp(0.8rem, 0.6714285714285715rem + 0.6428571428571428vw, 1.25rem);
@@ -74,5 +76,38 @@
         &::before {
             content: url('/interactive-comments-section-main/images/icon-reply.svg');
         }
+    }
+
+}
+
+.user {
+    display: grid;
+    gap: 1rem;
+    background-color: var(--clr-white);
+    padding: 1rem 0.5rem;
+    border-radius: 5px;
+
+
+    &__profile {
+        width: 1.5rem
+    }
+
+    &__send {
+        padding: 0.5rem 1.3rem;
+        font-size: clamp(0.8rem, 0.6714285714285715rem + 0.6428571428571428vw, 1.25rem);
+        color: var(--clr-white);
+        background-color: var(--clr-blue);
+        border-radius: 5px;
+    }
+
+    &__input {
+        color: var(--clr-grayblue);
+        font-size: clamp(0.67rem, 0.5935714285714286rem + 0.38214285714285706vw, 0.9375rem);
+        border: 1px solid var(--clr-gray);
+        border-radius: 5px;
+        padding-bottom: 4rem;
+        padding-left: 0.5rem;
+        padding-top: 0.5rem;
+
     }
 }
