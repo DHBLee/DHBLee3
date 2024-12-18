@@ -31,56 +31,62 @@ document.addEventListener('DOMContentLoaded', function() {
         const userContainer = document.createElement('div');
         userContainer.className = 'user';
         userContainer.innerHTML = `
+
+                <button class="user__send desktop">SEND</button>
+
                 <input class="user__input" placeholder="Add a comment...">
 
                 <div class="user__wrapper" style="display: flex; justify-content: space-between;
                     align-items: center;">
                     <img class="user__profile" src="./images/avatars/image-juliusomo.png" alt="">
 
-                    <button class="user__send">SEND</button>
+                    <button class="user__send mobile">SEND</button>
                 </div>
         ` ;
 
         mainContainer.appendChild(userContainer);
 
-        document.querySelector('.user__send').addEventListener('click', () => {
+        document.querySelectorAll('.user__send').forEach(send => {
+            send.addEventListener('click', () => {
 
-            let userValue = document.querySelector('.user__input').value;
-
-            const commentContainer = document.createElement('div');
-            commentContainer.className = 'main__comments';
-            const currentTime = new Date().toLocaleString();
-
-            commentContainer.innerHTML = `
-            <div class="main__profile">
-                <img class="main__picture" src="${data.currentUser.image.webp}" alt="">
-                <h6 class="main__username">${data.currentUser.username}</h6>
-                <span class="main__indicator">you</span>
-                <h6 class="main__date">${currentTime}</h6>
-            </div>
-
-            <p class="main__comment">
-                ${userValue}
-            </p>
-
-            <div class="main__toggle">
-                <div class="main__like">
-                    <button class="main__plus">+</button>
-                    <span class="main__likecount">0</span>
-                    <button class="main__minus">-</button>
+                let userValue = document.querySelector('.user__input').value;
+    
+                const commentContainer = document.createElement('div');
+                commentContainer.className = 'main__comments';
+                const currentTime = new Date().toLocaleString();
+    
+                commentContainer.innerHTML = `
+                <div class="main__profile">
+                    <img class="main__picture" src="${data.currentUser.image.webp}" alt="">
+                    <h6 class="main__username">${data.currentUser.username}</h6>
+                    <span class="main__indicator">you</span>
+                    <h6 class="main__date">${currentTime}</h6>
                 </div>
-                <div style="display: flex; gap: 0.7rem;">
-                    <button class="main__delete">Delete</button>
-                    <button class="main__edit">Edit</button>
+    
+                <p class="main__comment">
+                    ${userValue}
+                </p>
+    
+                <div class="main__toggle">
+                    <div class="main__like">
+                        <button class="main__plus">+</button>
+                        <span class="main__likecount">0</span>
+                        <button class="main__minus">-</button>
+                    </div>
+                    <div style="display: flex; gap: 0.7rem;">
+                        <button class="main__delete">Delete</button>
+                        <button class="main__edit">Edit</button>
+                    </div>
                 </div>
-            </div>
-            `;
-
-            mainContainer.insertBefore(commentContainer, userContainer);
-            document.querySelector('.user__input').value = '';
-            applyListeners(data);
-            applyListenersTwo(data);
+                `;
+    
+                mainContainer.insertBefore(commentContainer, userContainer);
+                document.querySelector('.user__input').value = '';
+                applyListeners(data);
+                applyListenersTwo(data);
+            })
         })
+       
     }
     
     function updateComments(data) {
@@ -96,15 +102,23 @@ document.addEventListener('DOMContentLoaded', function() {
             const comment = sortedComments[i];
 
             commentContainer.innerHTML = `
-            <div class="main__profile">
-                <img class="main__picture" src="${comment.user.image.webp}" alt="">
-                <h6 class="main__username">${comment.user.username}</h6>
-                <h6 class="main__date">${comment.createdAt}</h6>
-            </div>
 
-            <p class="main__comment">
-                ${comment.content}
-            </p>
+            <div class="desktop__wrapper">
+                <div class="desktop__wrapper__wrapper">
+                    <div class="main__profile">
+                        <img class="main__picture" src="${comment.user.image.webp}" alt="">
+                        <h6 class="main__username">${comment.user.username}</h6>
+                        <h6 class="main__date">${comment.createdAt}</h6>
+                    </div>
+
+                    <button class="main__reply desktop">Reply</button>
+                </div>
+                
+
+                <p class="main__comment">
+                    ${comment.content}
+                </p>
+            </div>
 
             <div class="main__toggle">
                 <div class="main__like">
@@ -112,7 +126,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="main__likecount">${comment.score}</span>
                     <button class="main__minus">-</button>
                 </div>
-                <button class="main__reply">Reply</button>
+
+                <button class="main__reply mobile">Reply</button>
             </div>
             `;
 
@@ -137,23 +152,30 @@ document.addEventListener('DOMContentLoaded', function() {
                         loadUserComment(data, reply, replyContainer);
                     } else {
                         replyContainer.innerHTML = `
-                        <div class="main__profile">
-                            <img class="main__picture" src="${reply.user.image.webp}" alt="">
-                            <h6 class="main__username">${reply.user.username}</h6>
-                            <h6 class="main__date">${reply.createdAt}</h6>
-                        </div>
+                        <div class="desktop__wrapper">
+                            <div class="desktop__wrapper__wrapper">
+                                <div class="main__profile">
+                                    <img class="main__picture" src="${reply.user.image.webp}" alt="">
+                                    <h6 class="main__username">${reply.user.username}</h6>
+                                    <h6 class="main__date">${reply.createdAt}</h6>
+                                </div>
 
-                        <p class="main__comment">
-                            <a href="#" class="main__link">@${reply.replyingTo}</a> ${reply.content}
-                        </p>
+                                <button class="main__reply desktop">Reply</button>
+                            </div>
+
+                            <p class="main__comment">
+                                <a href="#" class="main__link">@${reply.replyingTo}</a> ${reply.content}
+                            </p>
+                        </div>
 
                         <div class="main__toggle">
                             <div class="main__like">
-                            <button class="main__plus">+</button>
-                            <span class="main__likecount">${reply.score}</span>
-                            <button class="main__minus">-</button>
+                                <button class="main__plus">+</button>
+                                <span class="main__likecount">${reply.score}</span>
+                                <button class="main__minus">-</button>
                             </div>
-                            <button class="main__reply">Reply</button>
+
+                            <button class="main__reply mobile">Reply</button>
                         </div>
                         `
 
@@ -213,14 +235,21 @@ document.addEventListener('DOMContentLoaded', function() {
                         const commentScore = commentContainer.querySelector('.main__likecount').textContent;
                         const commentData = commentContainer.querySelector('.main__date').textContent;
                         commentContainer.innerHTML = `
-                        
-                            <div class="main__profile">
-                                <img class="main__picture" src="${commentImage}" alt="">
-                                <h6 class="main__username">${commentUsername}</h6>
-                                <h6 class="main__date">${commentData}</h6>
+                            <div class="desktop__wrapper">
+                                <div class="desktop__wrapper__wrapper">
+                                    <div class="main__profile">
+                                        <img class="main__picture" src="${commentImage}" alt="">
+                                        <h6 class="main__username">${commentUsername}</h6>
+                                        <h6 class="main__date">${commentData}</h6>
+                                    </div>
+
+                                </div>
+
+                                <textarea class="user__input">${commentContent}</textarea>
+
+                                <button class="main__update desktop" style="align-self: end;">Update</button>
                             </div>
-    
-                            <textarea class="user__input">${commentContent}</textarea>
+
     
                             <div class="main__toggle">
                                 <div class="main__like">
@@ -228,7 +257,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <span class="main__likecount">${commentScore}</span>
                                     <button class="main__minus">-</button>
                                 </div>
-                                <button class="main__update">Update</button>
+
+                                <button class="main__update mobile">Update</button>
                             </div>
     
                         `;
@@ -237,36 +267,47 @@ document.addEventListener('DOMContentLoaded', function() {
                         userInput.focus();
                         userInput.selectionStart = userInput.selectionEnd = userInput.value.length; 
 
-                        document.querySelector('.main__update').addEventListener('click', () => {
-                            const updatedContent = userInput.value;
-                            commentContainer.innerHTML = `
-                                    <div class="main__profile">
-                                        <img class="main__picture" src="${commentImage}" alt="">
-                                        <h6 class="main__username">${commentUsername}</h6>
-                                        <span class="main__indicator">you</span>
-                                        <h6 class="main__date">${commentData}</h6>
-                                    </div>
+                        document.querySelectorAll('.main__update').forEach( update => {
+                            update.addEventListener('click', () => {
+                                const updatedContent = userInput.value;
+                                commentContainer.innerHTML = `
+                                    <div class="desktop__wrapper">
+                                        <div class="desktop__wrapper__wrapper">
+                                            <div class="main__profile">
+                                                <img class="main__picture" src="${commentImage}" alt="">
+                                                <h6 class="main__username">${commentUsername}</h6>
+                                                <span class="main__indicator">you</span>
+                                                <h6 class="main__date">${commentData}</h6>
+                                            </div>
     
-                                    <p class="main__comment">
-                                        ${updatedContent}
-                                    </p>
+                                            <div class="desktop" style="display: flex; gap: 0.7rem;">
+                                                <button class="main__delete">Delete</button>
+                                                <button class="main__edit">Edit</button>
+                                            </div>
+                                        </div>
     
-                                    <div class="main__toggle">
-                                        <div class="main__like">
-                                            <button class="main__plus">+</button>
-                                            <span class="main__likecount">${commentScore}</span>
-                                            <button class="main__minus">-</button>
-                                        </div>
-                                        <div style="display: flex; gap: 0.7rem;">
-                                            <button class="main__delete">Delete</button>
-                                            <button class="main__edit">Edit</button>
-                                        </div>
+                                        <p class="main__comment">
+                                            ${updatedContent}
+                                        </p>
                                     </div>
-                            `;
-                            edit.removeAttribute('data-edit');
-                            applyListeners(data);
-                            applyListenersTwo(data);
-
+        
+                                        <div class="main__toggle">
+                                            <div class="main__like">
+                                                <button class="main__plus">+</button>
+                                                <span class="main__likecount">${commentScore}</span>
+                                                <button class="main__minus">-</button>
+                                            </div>
+                                            <div style="display: flex; gap: 0.7rem;">
+                                                <button class="main__delete">Delete</button>
+                                                <button class="main__edit">Edit</button>
+                                            </div>
+                                        </div>
+                                `;
+                                edit.removeAttribute('data-edit');
+                                applyListeners(data);
+                                applyListenersTwo(data);
+    
+                            })
                         })
                     })
                 } else {
@@ -308,7 +349,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             <button class="user__send reply">REPLY</button>
                         </div>
                     `;
-
+                    console.log(replyInput);
+                    console.log(parentDiv.parentElement);
+                    console.log(parentDiv.parentElement.parentElement)
+                    console.log(parentDiv);
+                    console.log(parentDiv.nextElementSibling);
 
 
                     parentDiv.insertAdjacentElement('afterend', replyInput);
@@ -347,9 +392,11 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                         `;
 
+                        console.log(replyInput);
+
                         replyInput.className = 'main__comments main__replies';
 
-                        updateComments(data);
+    
                         applyListeners(data);
                         applyListenersTwo(data);
                         
@@ -390,16 +437,27 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("Magkaparehas sila")
 
             replyContainer.innerHTML = `
-                <div class="main__profile">
-                    <img class="main__picture" src="${reply.user.image.webp}" alt="">
-                    <h6 class="main__username">${reply.user.username}</h6>
-                    <span class="main__indicator">you</span>
-                    <h6 class="main__date">${reply.createdAt}</h6>
+                <div class="desktop__wrapper">
+                    <div class="desktop__wrapper__wrapper">
+                        <div class="main__profile">
+                            <img class="main__picture" src="${reply.user.image.webp}" alt="">
+                            <h6 class="main__username">${reply.user.username}</h6>
+                            <span class="main__indicator">you</span>
+                            <h6 class="main__date">${reply.createdAt}</h6>
+                        </div>
+
+                        <div class="desktop" style="display: flex; gap: 0.7rem;">
+                            <button class="main__delete">Delete</button>
+                            <button class="main__edit">Edit</button>
+                        </div>
+                    </div>
+
+                    <p class="main__comment">
+                        @${reply.replyingTo} ${reply.content}
+                    </p>
+
                 </div>
 
-                <p class="main__comment">
-                    @${reply.replyingTo} ${reply.content}
-                </p>
 
                 <div class="main__toggle">
                     <div class="main__like">
@@ -407,7 +465,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <span class="main__likecount">${reply.score}</span>
                         <button class="main__minus">-</button>
                     </div>
-                    <div style="display: flex; gap: 0.7rem;">
+                    <div class="mobile" style="display: flex; gap: 0.7rem;">
                         <button class="main__delete">Delete</button>
                         <button class="main__edit">Edit</button>
                     </div>

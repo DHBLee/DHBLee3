@@ -116,11 +116,33 @@ textarea:focus {
   --clr-white: hsl(0, 0%, 100%);
 }
 
+.desktop {
+  display: none !important;
+}
+@media (min-width: 768px) {
+  .desktop {
+    display: flex !important;
+  }
+}
+.desktop__wrapper {
+  display: grid;
+  width: 100%;
+}
+.desktop__wrapper__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .mobile {
+    display: none !important;
+  }
+}
 .main {
   display: grid;
   gap: 1rem;
   margin: 1rem 0.5rem;
-  margin-bottom: 15rem;
   position: relative;
   z-index: 1;
 }
@@ -130,6 +152,13 @@ textarea:focus {
   padding: 1rem 0.5rem;
   background-color: var(--clr-white);
   border-radius: 5px;
+}
+@media (min-width: 768px) {
+  .main__comments {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
 }
 .main__replies {
   margin-left: 0.5rem;
@@ -176,6 +205,11 @@ textarea:focus {
   width: -moz-max-content;
   width: max-content;
   gap: 1rem;
+}
+@media (min-width: 768px) {
+  .main__like {
+    flex-direction: column;
+  }
 }
 .main__likecount {
   color: var(--clr-blue);
@@ -227,19 +261,25 @@ textarea:focus {
   color: var(--clr-white);
   padding: 0.5rem 1rem;
   border-radius: 5px;
+  width: -moz-max-content;
+  width: max-content;
+  justify-self: end;
 }
 
 .user {
-  position: fixed;
-  bottom: 20px;
-  left: 0;
-  right: 0;
   display: grid;
   gap: 1rem;
   background-color: var(--clr-white);
   padding: 1rem 0.5rem;
   margin-inline: 0.5rem;
   border-radius: 5px;
+}
+@media (min-width: 768px) {
+  .user {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+  }
 }
 .user__profile {
   width: 1.5rem;
@@ -259,6 +299,7 @@ textarea:focus {
   padding-bottom: 4rem;
   padding-left: 0.5rem;
   padding-top: 0.5rem;
+  width: 100%;
 }
 
 .confirmation-overlay {
