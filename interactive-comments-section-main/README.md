@@ -35,7 +35,8 @@ Users should be able to:
 ### Screenshot
 
 
-![](./screenshot.jpg)
+![](./images/1440px_solution.png)
+![](./images/375px_solution.png)
 
 
 
@@ -43,8 +44,8 @@ Users should be able to:
 ### Links
 
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/DHBLee/DHBLee3/tree/DHBLee/Fronend-Mentor/Interactive)
+- Live Site URL: [Add live site URL here](https://dhb-lee3-6j2o.vercel.app/)
 
 
 ## My process
@@ -56,7 +57,7 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
+- SCSS
 - Mobile-first workflow
 - JS
 
@@ -65,19 +66,18 @@ Users should be able to:
 
 ### What I learned
 
-
+Learned a lot about JS
 
 
 ### Continued development
 
-
+fix my JS code and really implement all the said features of this challenge
 
 
 ### Useful resources
 
 
-- [Example resource 1](https://www.chatgpt.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-
+- [Example resource 1](https://www.chatgpt.com) - yes..
 
 
 

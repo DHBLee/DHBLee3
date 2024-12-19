@@ -30,7 +30,10 @@
     position: relative;
     z-index: 1;
 
-    max-width: 1024px;
+    @media(min-width: 768px) {
+        max-width: 824px;
+        margin: auto;
+    }
 
     &__comments {
         display: grid;
@@ -38,6 +41,7 @@
         padding: 1rem 0.5rem;
         background-color: var(--clr-white);
         border-radius: 5px;
+
 
         @media(min-width: 768px) {
             display: flex;
@@ -47,9 +51,15 @@
     }
 
     &__replies {
-        margin-left: 0.5rem;
+        margin-left: 1rem;
         border-left: 2px solid #ccc; /* Adjust color and width as needed */
         padding-left: 1rem;
+
+        @media(min-width: 768px) {
+            margin-left: 3.5rem;
+        }
+
+  
     }
 
     &__profile {
@@ -123,7 +133,7 @@
         gap: 0.5rem;
     
         &::before {
-            content: url('/interactive-comments-section-main/images/icon-reply.svg');
+            content: url('/images/icon-reply.svg');
         }
     }
 
@@ -141,7 +151,7 @@
         color: var(--clr-red);
 
         &::before {
-            content: url('/interactive-comments-section-main/images/icon-delete.svg');
+            content: url('/images/icon-delete.svg');
         }
     }
 
@@ -150,7 +160,7 @@
         color: var(--clr-blue);
 
         &::before {
-            content: url('/interactive-comments-section-main/images/icon-edit.svg');
+            content: url('/images/icon-edit.svg');
         }
     }
 
@@ -184,6 +194,7 @@
     padding: 1rem 0.5rem;
     margin-inline: 0.5rem;
     border-radius: 5px;
+
 
     @media(min-width: 768px) {
         display: flex;

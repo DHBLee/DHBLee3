@@ -146,6 +146,12 @@ textarea:focus {
   position: relative;
   z-index: 1;
 }
+@media (min-width: 768px) {
+  .main {
+    max-width: 824px;
+    margin: auto;
+  }
+}
 .main__comments {
   display: grid;
   gap: 1rem;
@@ -161,9 +167,14 @@ textarea:focus {
   }
 }
 .main__replies {
-  margin-left: 0.5rem;
+  margin-left: 1rem;
   border-left: 2px solid #ccc; /* Adjust color and width as needed */
   padding-left: 1rem;
+}
+@media (min-width: 768px) {
+  .main__replies {
+    margin-left: 3.5rem;
+  }
 }
 .main__profile {
   display: flex;
@@ -227,7 +238,7 @@ textarea:focus {
   gap: 0.5rem;
 }
 .main__reply::before {
-  content: url("/interactive-comments-section-main/images/icon-reply.svg");
+  content: url("/images/icon-reply.svg");
 }
 .main__delete, .main__edit {
   position: relative;
@@ -240,13 +251,13 @@ textarea:focus {
   color: var(--clr-red);
 }
 .main__delete::before {
-  content: url("/interactive-comments-section-main/images/icon-delete.svg");
+  content: url("/images/icon-delete.svg");
 }
 .main__edit {
   color: var(--clr-blue);
 }
 .main__edit::before {
-  content: url("/interactive-comments-section-main/images/icon-edit.svg");
+  content: url("/images/icon-edit.svg");
 }
 .main__link {
   color: var(--clr-blue);
