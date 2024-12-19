@@ -30,6 +30,8 @@
     position: relative;
     z-index: 1;
 
+    max-width: 1024px;
+
     &__comments {
         display: grid;
         gap: 1rem;
