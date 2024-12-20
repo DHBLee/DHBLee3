@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }).addTo(map);
 
     let marker;
-    
+
     searchBtn.addEventListener('click', () => {
         const ip = document.querySelector('.main__input').value.trim();
         if (ip) {
@@ -34,18 +34,26 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(data => {
             detailsContainer.innerHTML = `
-                <h6 class="main__label">IP ADDRESS</h6>
-                <h1 class="main__result">${data.ip}</h1>
+                <div class="grid">
+                    <h6 class="main__label">IP ADDRESS</h6>
+                    <h1 class="main__result">${data.ip}</h1>
+                </div>
 
-                <h6 class="main__label">LOCATION</h6>
-                <h1 class="main__result">${data.location.city}, ${data.location.region}</h1>
+                <div class="grid">
+                    <h6 class="main__label">LOCATION</h6>
+                    <h1 class="main__result">${data.location.city}, ${data.location.region}</h1>
+                </div>
 
-                <h6 class="main__label">TIMEZONE</h6>
-                <h1 class="main__result">UTC ${data.location.timezone}</h1>
+                <div class="grid">
+                    <h6 class="main__label">TIMEZONE</h6>
+                    <h1 class="main__result">UTC ${data.location.timezone}</h1>
+                </div>
 
-                <h6 class="main__label">ISP</h6>
-                <h1 class="main__result">${data.isp}</h1>
-            </div>
+                <div class="grid">
+                    <h6 class="main__label">ISP</h6>
+                    <h1 class="main__result">${data.isp}</h1>
+                </div>
+        
             `;
 
             const lat = data.location.lat;
