@@ -1,0 +1,108 @@
+@mixin flex {
+	display: flex;
+	flex-direction: row;
+    align-items: flex-start;
+}
+
+
+.main {
+    position: relative;
+    height: 100vh;
+
+    &__bg {
+        width: 100%;
+    }
+
+    &__absolute {
+        position: absolute;
+        left: 50%;
+        top: 25px;
+        transform: translateX(-50%);
+        width: calc(100% - 2rem);
+
+        display: grid;
+        text-align: center;
+        gap: 1rem;
+
+        @media(min-width: 768px) {
+            width: calc(100% - 9.2rem);
+        }
+    }
+
+    &__title {
+        color: white;
+        margin-bottom: 0.5rem;
+    }
+
+
+    &__input {
+        width: 100%;
+        background-color: white;
+        padding: 0.8rem;
+        border-radius: 15px 0 0 15px;
+
+        font-size: 0.8rem;
+        color: var(--clr-darkgray);
+    }
+
+    &__arrow {
+        background-color: var(--clr-darkgray);
+        padding: 1rem;
+
+        border-radius: 0 15px 15px 0;
+        cursor: pointer;
+    }
+
+    &__details {
+        display: grid;
+        text-align: center;
+        gap: 1.2rem;
+
+        background-color: white;
+        border-radius: 15px;
+        padding: 1.3rem;
+
+        @media(min-width: 768px) {
+            @include flex;
+            text-align: left;
+        }
+    }
+
+    &__label {
+        color: var(--clr-gray);
+        letter-spacing: 0.1rem;
+        font-weight: 700;
+        font-size: clamp(0.5rem, 0.4428571428571429rem + 0.28571428571428564vw, 0.7rem);
+    }
+
+    &__result {
+        color: var(--clr-darkgray);
+        font-size: clamp(1rem, 0.9428571428571428rem + 0.28571428571428564vw, 1.2rem);
+    }
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 720px;
+    margin: auto;
+}
+
+.grid {
+    display: grid;
+    gap: 0.5rem;
+
+    @media(min-width: 768px) {
+        padding-right: 2rem;
+
+        &:not(:nth-child(4)) {
+            border-right: 1px solid var(--clr-gray);
+        }
+    }
+}
+#map {
+    position: relative;
+    z-index: -1;
+    height: 100vh;
+}

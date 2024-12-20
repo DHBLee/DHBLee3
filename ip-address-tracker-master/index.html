@@ -5,7 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+  <link rel="stylesheet" href="./dist/style.css">
+  <script src="js/script.js"></script>
+
   <title>Frontend Mentor | IP Address Tracker</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -16,19 +28,56 @@
 </head>
 <body>
 
-  IP Address Tracker
+  <main class="main">
+    <picture>
+      <source srcset="./images/pattern-bg-desktop.png" media="(min-width: 768px)">
+  <!-- Mobile background (fallback) -->
+      <img class="main__bg" src="./images/pattern-bg-mobile.png" alt="Background">
+    </picture>
 
-  Search for any IP address or domain
 
-  IP Address
-  Location
-  Timezone
-    UTC <!-- add offset value dynamically using the API -->
-  ISP
+    <div class="main__absolute">
+      <h1 class="main__title">IP Address Tracker</h1>
+
+      <div class="wrapper">
+        <input class="main__input" placeholder="Search for any IP address or domain">
+        <img class="main__arrow" src="./images/icon-arrow.svg" alt="">
+      </div>
+
+      <div class="main__details">
+
+        <div class="grid">
+          <h6 class="main__label">IP ADDRESS</h6>
+          <h1 class="main__result">192.212.174.101</h1>
+        </div>
+
+        <div class="grid">
+          <h6 class="main__label">LOCATION</h6>
+          <h1 class="main__result">Brooklyn, NY 10001</h1>
+        </div>
+
+        <div class="grid">
+          <h6 class="main__label">TIMEZONE</h6>
+          <h1 class="main__result">UTC -05:00</h1>          
+        </div>
+
+        <div class="grid">
+          <h6 class="main__label">ISP</h6>
+          <h1 class="main__result">SpaceX Starlink</h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="map">
+
+    </div>
+
+  </main>
+
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">DHBLee</a>.
   </div>
 </body>
 </html>
