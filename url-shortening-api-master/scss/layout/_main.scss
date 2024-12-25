@@ -20,7 +20,7 @@
     }
 }
 
-main > *:not(:last-of-type), header, footer {
+main > section:not(:last-of-type), header, footer {
     padding-inline: clamp(1rem, -1.1428571428571428rem + 10.714285714285714vw, 6rem);
 }
 
@@ -72,19 +72,23 @@ main > *:not(:last-of-type), header, footer {
 }
 
 .result {
+    
     width: calc(100% - 2 * clamp(1rem, -1.1428571428571428rem + 10.714285714285714vw, 6rem));
     margin: auto;
     
     @include display(flex, 0, center, space-between);
-    padding: 0.5rem;
+    padding: 0.5rem !important;
     background-color: white;
     border-radius: 5px;
 
     @media(max-width: 767px) {
         display: grid;
+        grid-template-columns: 1fr;
         gap: 2rem;
-        justify-content: center;
-    
+        justify-content: flex-start;
+        align-items: stretch;
+        
+        
     }
 }
 
@@ -207,9 +211,9 @@ main {
         border-radius: 5px;
         padding: 1rem;
 
-        background-image: url('/url-shortening-api-master/images/bg-shorten-mobile.svg');
+        background-image: url('/images/bg-shorten-mobile.svg');
         @media(min-width: 768px) {
-            background-image: url('/url-shortening-api-master/images/bg-shorten-desktop.svg');
+            background-image: url('/images/bg-shorten-desktop.svg');
         }
         background-repeat: no-repeat;
         background-size: 100%;
@@ -322,9 +326,9 @@ main {
         @extend .wrapper_grid;
         background-color: var(--clr-violet);
         padding: 4rem 0;
-        background-image: url('/url-shortening-api-master/images/bg-boost-mobile.svg');
+        background-image: url('/images/bg-boost-mobile.svg');
         @media(min-width: 1322px) {
-            background-image: url('/url-shortening-api-master/images/bg-boost-desktop.svg');
+            background-image: url('/images/bg-boost-desktop.svg');
         }
         background-repeat: no-repeat;
         background-size: 100%;
@@ -374,6 +378,7 @@ footer {
 
     ul:last-of-type {
         display: flex;
+        flex-wrap: wrap;
         gap: 1.5rem;
 
         li:hover {

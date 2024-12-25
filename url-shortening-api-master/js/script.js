@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
     
             section2Container.insertAdjacentElement('afterend', resultContainer);
+
+            applyListener();
         } else {
             document.querySelector('#error').style.display = "inline-block";
             document.querySelector('#url').classList.add('error_input');
@@ -48,6 +50,23 @@ document.addEventListener('DOMContentLoaded', function() {
             result += characters[randomIndex];
         }
         return result;
+    }
+
+    function applyListener() {
+        document.querySelectorAll('.copy').forEach(copy => {
+            if (copy.hasAttribute('data-coppy')) {
+                return;
+            } else {
+                copy.addEventListener('click', () => {
+                    console.log('yeho');
+                    copy.setAttribute('data-copy', 'true');
+                    copy.textContent = 'Copied';
+                    copy.style.backgroundColor = 'black';
+                })
+                
+
+            }
+        })
     }
 
 })

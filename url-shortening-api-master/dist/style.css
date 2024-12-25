@@ -138,7 +138,7 @@ textarea:focus {
   }
 }
 
-main > *:not(:last-of-type), header, footer {
+main > section:not(:last-of-type), header, footer {
   padding-inline: clamp(1rem, -1.1428571429rem + 10.7142857143vw, 6rem);
 }
 
@@ -206,15 +206,17 @@ main > *:not(:last-of-type), header, footer {
   justify-content: space-between;
   gap: 0;
   text-align: normal;
-  padding: 0.5rem;
+  padding: 0.5rem !important;
   background-color: white;
   border-radius: 5px;
 }
 @media (max-width: 767px) {
   .result {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 2rem;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: stretch;
   }
 }
 
@@ -338,14 +340,14 @@ main .section2 {
   margin-inline: clamp(1rem, -1.1428571429rem + 10.7142857143vw, 6rem);
   border-radius: 5px;
   padding: 1rem;
-  background-image: url("/url-shortening-api-master/images/bg-shorten-mobile.svg");
+  background-image: url("/images/bg-shorten-mobile.svg");
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
 }
 @media (min-width: 768px) {
   main .section2 {
-    background-image: url("/url-shortening-api-master/images/bg-shorten-desktop.svg");
+    background-image: url("/images/bg-shorten-desktop.svg");
   }
 }
 main .section2 form {
@@ -439,7 +441,7 @@ main .section3__details .wrapper_grid:nth-child(2)::after, main .section3__detai
 main .section4 {
   background-color: var(--clr-violet);
   padding: 4rem 0;
-  background-image: url("/url-shortening-api-master/images/bg-boost-mobile.svg");
+  background-image: url("/images/bg-boost-mobile.svg");
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
@@ -447,7 +449,7 @@ main .section4 {
 }
 @media (min-width: 1322px) {
   main .section4 {
-    background-image: url("/url-shortening-api-master/images/bg-boost-desktop.svg");
+    background-image: url("/images/bg-boost-desktop.svg");
   }
 }
 
@@ -493,6 +495,7 @@ footer ul:not(:last-of-type) li:hover, footer .mobile_nav button:not(:last-of-ty
 }
 footer ul:last-of-type, footer .mobile_nav button:last-of-type, .mobile_nav footer button:last-of-type {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
 }
 footer ul:last-of-type li:hover svg path, footer .mobile_nav button:last-of-type li:hover svg path, .mobile_nav footer button:last-of-type li:hover svg path {

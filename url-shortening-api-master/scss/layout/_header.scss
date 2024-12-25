@@ -1,6 +1,0 @@
-@use 'main';
-
-header {
-    background-color: green;
-    @include display(flex, 0, center, space-between);
-}
