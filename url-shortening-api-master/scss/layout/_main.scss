@@ -1,0 +1,26 @@
+@mixin display($display, $gap, $align, $justify) {
+    display: $display;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+
+.desktop {
+    display: none !important;
+
+    @media(min-width: 768px) {
+        display: block;
+    }
+}
+
+.wrapper_flex {
+    @include display(flex, 0.5rem, center, center);
+}
+
+.wrapper_grid {
+    @include display(grid, 0.5rem, center, center);
+}
+
+main {
+    @include display(grid, 3rem, center, center);
+}
