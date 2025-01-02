@@ -1,0 +1,19 @@
+
+
+
+.main {
+    &__section1 {
+
+    }
+
+    &__section2 {
+        padding: 1rem 0.5rem;
+        background-color: var(--clr-screenBG);
+        font-size: 1.5rem;
+        text-align: right;
+    }
+
+    &__section3 {
+        background-color: var(--clr-toggleBG);
+    }
+}

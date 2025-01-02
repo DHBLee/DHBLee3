@@ -1,0 +1,49 @@
+.default-theme {
+    --clr-mainBG: hsl(222, 26%, 31%);
+    --clr-toggleBG: hsl(223, 31%, 20%);
+    --clr-screenBG: hsl(224, 36%, 15%);
+
+    --clr-keyBG: hsl(225, 21%, 29%);
+    --clr-keySD: hsl(225, 21%, 49%);
+    --clr-keytoggleBG: hsl(6, 63%, 50%);
+    --clr-shadowKEY: hsl(6, 70%, 34%);
+    --clr-BGkey: hsl(30, 25%, 89%);
+    --clr-SDkey: hsl(28, 16%, 65%);
+
+    --clr-textONE: hsl(221, 14%, 31%);
+    --clr-textTWO: hsl(0, 0%, 100%);
+}
+
+.second-theme {
+    --clr-mainBG: hsl(0, 0%, 90%);
+    --clr-toggleBG: hsl(0, 5%, 81%);
+    --clr-screenBG: hsl(0, 0%, 93%);
+
+    --clr-keyBG: hsl(185, 42%, 37%);
+    --clr-keySD: hsl(185, 58%, 25%);
+    --clr-keytoggleBG: hsl(25, 98%, 40%);
+    --clr-shadowKEY: hsl(25, 99%, 27%);
+    --clr-BGkey: hsl(45, 7%, 89%);
+    --clr-SDkey: hsl(35, 11%, 61%);
+
+    --clr-textONE: hsl(60, 10%, 19%);
+    --clr-textTWO: hsl(0, 0%, 100%);
+}
+
+.three-theme {
+    --clr-mainBG: hsl(268, 75%, 9%);
+    --clr-toggleBG: hsl(268, 71%, 12%);
+    --clr-screenBG: hsl(268, 71%, 12%);
+
+    --clr-keyBG: hsl(281, 89%, 26%);
+    --clr-keySD: hsl(285, 91%, 52%);
+    --clr-keytoggleBG: hsl(176, 100%, 44%);
+    --clr-shadowKEY: hsl(177, 92%, 70%);
+    --clr-BGkey: hsl(268, 47%, 21%);
+    --clr-SDkey: hsl(290, 70%, 36%);
+
+    --clr-textONE: hsl(52, 100%, 62%);
+    --clr-textTWO: hsl(0, 0%, 100%);
+    --clr-textTHREE: hsl(198, 20%, 13%);
+    
+}
