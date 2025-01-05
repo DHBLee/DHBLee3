@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="../dist/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
   <title>Frontend Mentor | Multi-step form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,6 +19,111 @@
   </style>
 </head>
 <body>
+  <main class="main">
+    <div>
+      <ul class="steps">
+        <li>1 <span>STEP 1<br> YOUR INFO</span></li>
+        <li>2 <span>STEP 2<br> SELECT PLAN</span></li>
+        <li>3 <span>STEP 3<br> ADD-ONS</span></li>
+        <li>4 <span>STEP 4<br> SUMMARY</span></li>
+      </ul>
+    </div>
+    <div class="information">
+      <h1 id="information-h1">Personal Info</h1>
+      <h3 id="information-h3">Please provide your name, email address, and phone number.</h3>
+
+      <form>
+        <fieldset id="fieldset-step1">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required placeholder="e.g. Stephen King">
+
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" required placeholder="e.g. stephenkin@loem.com">
+
+          <label for="number">Phone Number</label>
+          <input id="number" name="number" type="tel" required placeholder="e.g. +1 234 567 890">
+        </fieldset>
+
+        <fieldset id="fieldset-step2">
+          <div class="flex-wrapper">
+            <img src="" alt="">
+            <h3>Arcade<br><span id="arcade-fees">$9/mo</span><span class="step2-yearly">2 months free</span></h3>
+          </div>
+
+          <div class="flex-wrapper">
+            <img src="" alt="">
+            <h3>Advanced<br><span id="advanced-fees">$12/mo</span><span class="step2-yearly">2 months free</span></h3>
+          </div>
+
+          <div class="flex-wrapper">
+            <img src="" alt="">
+            <h3>Pro<br><span id="pro-fees">$15/mo</span><span class="step2-yearly">2 months free</span></h3>
+          </div>
+
+          <div>
+            <h3>Monthly</h3>
+            <div>
+              <input type="checkbox" id="toggle">
+              <label for="toggle" id="label"></label>
+            </div>
+            <h3>Yearly</h3>
+          </div>
+        </fieldset>
+
+        <fieldset id="fieldset-step3">
+          <div class="flex-wrapper">
+            <input type="checkbox" name="online">
+            <h3>Online service<br><span>Access to multiplayer games</span></h3>
+            <span class="step3-fees online-fees">+$1/mo</span>
+          </div>
+
+          <div class="flex-wrapper">
+            <input type="checkbox" name="larger">
+            <h3>Larger storage<br><span>Extra 1TB of cloud save</span></h3>
+            <span class="step3-fees larger-fees">+$2/mo</span>
+          </div>
+
+          <div class="flex-wrapper">
+            <input type="checkbox" name="custom">
+            <h3>Customizable profile<br><span>Custom theme on your profile</span></h3>
+            <span class="step3-fees custom-fees">+$2/mo</span>
+          </div>
+        </fieldset>
+
+        <fieldset id="fieldset-step4">
+          <div class="flex-wrapper2">
+            <h3>Arcade (Monthly)</h3>
+            <span id="step2-finalPlan">$9/mo</span>
+          </div>
+
+          <div class="flex-wrapper2">
+            <span>Online service</span>
+            <span class="step4-fees online-fees">+$1/mo</span>
+          </div>
+
+          <div class="flex-wrapper2">
+            <span>Larger storage</span>
+            <span class="step4-fees larger-fees">+$2/mo</span>
+          </div>
+
+          <div class="flex-wrapper2">
+            <span id="total-plan">Total (per month)</span>
+            <span id="total-fees">+$12/mo</span>
+          </div>
+        </fieldset>
+
+        <div>
+          <button class="backBtn">Go Back</button>
+          <button class="nextBtn">Next Step</button>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <button class="backBtn">Go Back</button>
+      <button class="nextBtn">Next Step</button>
+    </div>
+  </main>
 
   <!-- Sidebar start -->
 
