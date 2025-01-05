@@ -1,28 +1,153 @@
+#result {
+  color: var(--clr-textIMPROV);
+  font-weight: 700;
+}
+
+.main {
+  max-width: 360px;
+  height: 100%;
+  max-height: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: grid;
+  gap: 1rem;
+  margin: auto;
+}
+@media (max-width: 375.8px) {
+  .main {
+    max-width: 288px;
+  }
+}
+.main__section1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  text-align: normal;
+  color: var(--clr-textIMPROV);
+}
+.main__section1__wrapperFlex {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: normal;
+}
+.main__section1__wrapperGrid {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  text-align: normal;
+}
+.main__section1__title {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+.main__section1__theme {
+  font-weight: 500;
+  letter-spacing: 0.04rem;
+  font-size: 0.6rem;
+  margin-bottom: 5px;
+}
+.main__section1__themeSelector {
+  letter-spacing: 0.7rem;
+  font-size: 0.5rem;
+  margin-left: 5px;
+}
+.main__section1__themeToggle {
+  position: relative;
+  padding: 0.1rem;
+  width: 100%;
+  background-color: var(--clr-toggleBG);
+  border-radius: 25px;
+}
+.main__section1__themeToggle__toggle-input {
+  opacity: 0;
+}
+.main__section1__themeToggle__toggle-label {
+  cursor: pointer;
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--clr-keytoggleBG);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
 .main__section2 {
-  padding: 1rem 0.5rem;
+  padding: 1rem 1rem;
+  border-radius: 5px;
   background-color: var(--clr-screenBG);
   font-size: 1.5rem;
   text-align: right;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .main__section3 {
   background-color: var(--clr-toggleBG);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.main__section3__mainBtns, .main__section3__deleteBtn, .main__section3__resetBtn, .main__section3__equalBtn {
+  height: 50px;
+  font-weight: 700;
+  border-radius: 5px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 4px solid transparent;
+}
+.main__section3__mainBtns:hover, .main__section3__deleteBtn:hover, .main__section3__resetBtn:hover, .main__section3__equalBtn:hover {
+  box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.3);
+}
+.main__section3__mainBtns {
+  font-size: 1.5rem;
+  background-color: var(--clr-BGkey);
+  border-color: var(--clr-SDkey);
+  color: var(--clr-textONE);
+}
+.main__section3__deleteBtn {
+  color: var(--clr-textTWO);
+  background-color: var(--clr-keyBG);
+  border-color: var(--clr-keySD);
+}
+.main__section3__resetBtn, .main__section3__equalBtn {
+  grid-column: span 2;
+  color: var(--clr-textTWO);
+}
+.main__section3__resetBtn {
+  background-color: var(--clr-keyBG);
+  border-color: var(--clr-keySD);
+}
+.main__section3__equalBtn {
+  background-color: var(--clr-keytoggleBG);
+  border-color: var(--clr-shadowKEY);
 }
 
-.default-theme {
+.theme1 {
   --clr-mainBG: hsl(222, 26%, 31%);
   --clr-toggleBG: hsl(223, 31%, 20%);
   --clr-screenBG: hsl(224, 36%, 15%);
-  --clr-keyBG: hsl(225, 21%, 29%);
-  --clr-keySD: hsl(225, 21%, 49%);
+  --clr-keyBG: hsl(225, 21%, 49%);
+  --clr-keySD: hsl(225, 21%, 29%);
   --clr-keytoggleBG: hsl(6, 63%, 50%);
   --clr-shadowKEY: hsl(6, 70%, 34%);
   --clr-BGkey: hsl(30, 25%, 89%);
   --clr-SDkey: hsl(28, 16%, 65%);
   --clr-textONE: hsl(221, 14%, 31%);
+  --clr-textIMPROV: hsl(0, 0%, 100%);
   --clr-textTWO: hsl(0, 0%, 100%);
 }
 
-.second-theme {
+.theme2 {
   --clr-mainBG: hsl(0, 0%, 90%);
   --clr-toggleBG: hsl(0, 5%, 81%);
   --clr-screenBG: hsl(0, 0%, 93%);
@@ -33,10 +158,11 @@
   --clr-BGkey: hsl(45, 7%, 89%);
   --clr-SDkey: hsl(35, 11%, 61%);
   --clr-textONE: hsl(60, 10%, 19%);
+  --clr-textIMPROV: hsl(60, 10%, 19%);
   --clr-textTWO: hsl(0, 0%, 100%);
 }
 
-.three-theme {
+.theme3 {
   --clr-mainBG: hsl(268, 75%, 9%);
   --clr-toggleBG: hsl(268, 71%, 12%);
   --clr-screenBG: hsl(268, 71%, 12%);
@@ -47,6 +173,7 @@
   --clr-BGkey: hsl(268, 47%, 21%);
   --clr-SDkey: hsl(290, 70%, 36%);
   --clr-textONE: hsl(52, 100%, 62%);
+  --clr-textIMPROV: hsl(52, 110%, 62%);
   --clr-textTWO: hsl(0, 0%, 100%);
   --clr-textTHREE: hsl(198, 20%, 13%);
 }
@@ -72,6 +199,7 @@ body {
   background-color: var(--clr-mainBG);
   font-family: "League Spartan", sans-serif;
   min-height: 100vh;
+  margin: auto;
 }
 
 img,

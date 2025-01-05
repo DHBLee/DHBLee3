@@ -1,20 +1,21 @@
-.default-theme {
+.theme1 {
     --clr-mainBG: hsl(222, 26%, 31%);
     --clr-toggleBG: hsl(223, 31%, 20%);
     --clr-screenBG: hsl(224, 36%, 15%);
 
-    --clr-keyBG: hsl(225, 21%, 29%);
-    --clr-keySD: hsl(225, 21%, 49%);
+    --clr-keyBG: hsl(225, 21%, 49%);
+    --clr-keySD: hsl(225, 21%, 29%);
     --clr-keytoggleBG: hsl(6, 63%, 50%);
     --clr-shadowKEY: hsl(6, 70%, 34%);
     --clr-BGkey: hsl(30, 25%, 89%);
     --clr-SDkey: hsl(28, 16%, 65%);
 
     --clr-textONE: hsl(221, 14%, 31%);
+    --clr-textIMPROV: hsl(0, 0%, 100%);
     --clr-textTWO: hsl(0, 0%, 100%);
 }
 
-.second-theme {
+.theme2 {
     --clr-mainBG: hsl(0, 0%, 90%);
     --clr-toggleBG: hsl(0, 5%, 81%);
     --clr-screenBG: hsl(0, 0%, 93%);
@@ -27,10 +28,11 @@
     --clr-SDkey: hsl(35, 11%, 61%);
 
     --clr-textONE: hsl(60, 10%, 19%);
+    --clr-textIMPROV: hsl(60, 10%, 19%);
     --clr-textTWO: hsl(0, 0%, 100%);
 }
 
-.three-theme {
+.theme3 {
     --clr-mainBG: hsl(268, 75%, 9%);
     --clr-toggleBG: hsl(268, 71%, 12%);
     --clr-screenBG: hsl(268, 71%, 12%);
@@ -43,6 +45,7 @@
     --clr-SDkey: hsl(290, 70%, 36%);
 
     --clr-textONE: hsl(52, 100%, 62%);
+    --clr-textIMPROV: hsl(52, 110%, 62%);
     --clr-textTWO: hsl(0, 0%, 100%);
     --clr-textTHREE: hsl(198, 20%, 13%);
     
