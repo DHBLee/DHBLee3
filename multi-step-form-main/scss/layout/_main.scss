@@ -1,0 +1,256 @@
+@mixin display($display, $gap: 0, $align: normal, $justify: normal, $text-align: normal) {
+    display: $display;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+    text-align: $text-align;
+}
+
+.main {
+    position: relative;
+}
+
+
+.steps {
+    @include display(flex, 1rem, center, center);
+    
+    li {
+        border: 1px solid var(--clr-white);
+        font-weight: 500;
+        border-radius: 50%;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.9rem;
+        color: var(--clr-white);
+
+        &:first-child {
+            border-color: var(--clr-lightBlue);
+            background-color: var(--clr-lightBlue);
+            color: var(--clr-marineBlue);
+        }
+    }
+}
+.steps-desktop {
+    @media (max-width: 769px) {
+        display: none;
+    }
+}
+.btn-desktop {
+    @media (max-width: 769px) {
+        display: none;
+    }
+}
+.header {
+    background-image: url('/multi-step-form-main/assets/images/bg-sidebar-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    padding-top: 1.5rem;
+    padding-bottom: 4rem;
+}
+
+.information {
+    @include display(grid, 0.5rem, center, normal, normal);
+
+    background-color: var(--clr-white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 1.5rem 0.9rem;
+    width: calc(100% - 2rem);
+    margin-top: -2rem;
+    margin-bottom: 6rem;
+    margin-inline: auto;
+}
+
+form {
+    @include display(grid, 2rem, center, normal)
+}
+
+#fieldset-step2, #fieldset-step3, #fieldset-step1 {
+    display: none;
+}
+
+fieldset {
+    border: none;
+    display: grid;
+}
+
+
+.flex-wrapper {
+    @include display(flex, 1rem, flex-start);
+    border: 2px solid var(--clr-lightGray);
+    border-radius: 10px;
+    padding: 0.8rem;
+
+    &:focus {
+        border-color: var(--clr-purpleBlue);
+    }
+}
+
+.flex-wrapper2 {
+    @extend .flex-wrapper;
+    border: none;
+    justify-content: center;
+    background-color: var(--clr-magnolia);
+    
+    h3 {
+        color: var(--clr-coolGray) !important;
+    }
+    .duration-toggle {
+        position: relative;
+        padding: 0.1rem;
+        width: 40px;
+        height: 20px;
+        background-color: var(--clr-marineBlue);
+        border-radius: 25px;
+
+        #toggle {
+            opacity: 0;
+        }
+
+        #label {
+            cursor: pointer;
+            position: absolute;
+            top: 4px;
+            left:3px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--clr-white);   
+            border-radius: 50%;
+            transition: all 0.3s ease;   
+        }
+    }
+}
+
+.flex-wrapper3 {
+    @extend .flex-wrapper;
+    align-items: center;
+}
+
+.flex-wrapper4 {
+    @include display(flex, 0, center, space-between);
+    padding: 0.7rem 0.6rem;
+    border-radius: 5px;
+
+    &:not(:last-child) {
+        background-color: var(--clr-magnolia);
+    }
+
+    &:last-child {
+        margin-top: 0.8rem;
+    }
+}
+
+#fieldset-step2 {
+    gap: 1rem;
+
+    h3 {
+        color: var(--clr-marineBlue);
+        font-weight: 700;
+        text-align: left;
+        font-size: 1rem;
+
+        .step2-monthly {
+            color: var(--clr-coolGray);
+        }
+        .step2-yearly {
+            display: none;
+            color: var(--clr-marineBlue);
+            font-weight: 500;
+            font-size: 0.8rem;
+        }
+    }
+
+}
+
+#fieldset-step3 {
+    gap: 1rem;
+
+    h3 {
+        color: var(--clr-marineBlue);
+        font-weight: 700;
+        text-align: left;
+        font-size: 0.8rem;
+
+        .step3-description {
+            color: var(--clr-coolGray);
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+
+    }
+
+    input[type="checkbox"] {
+        transform: scale(1.5);
+        margin: auto 0;
+    }
+
+    .step3-fees {
+        font-size: 0.7em;
+        color: var(--clr-purpleBlue);
+        margin-left: auto;
+    }
+}
+
+#fieldset-step4 {
+
+    h3, #final-plan {
+        color: var(--clr-marineBlue);
+        font-weight: 700;
+    }
+    span:not(.step3-fees) {
+        color: var(--clr-coolGray);
+    }
+
+    #total-fees {
+        color: var(--clr-purpleBlue);
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    a {
+        text-decoration: underline;
+        color: var(--clr-coolGray);
+        font-weight: 500;
+    }
+}
+
+label {
+    font-size: 0.8rem;
+    color: var(--clr-marineBlue);
+}
+
+input {
+    border: 2px solid var(--clr-lightGray);
+    border-radius: 5px;
+    padding: 0.5rem 0.7rem;
+    margin-top: 0.1rem;
+    font-weight: 500;
+    color: var(--clr-marineBlue);
+
+    &:not(:last-child) {
+        margin-bottom: 0.8rem;
+    }
+    
+    &:focus {
+        border-color: var(--clr-purpleBlue);
+    }
+}
+
+
+.btn-proceed {
+    @include display(flex, 0, center, space-between, normal);
+    background-color: var(--clr-white);
+    padding: 0.5rem;
+}
+
+.backBtn {
+    color: var(--clr-coolGray);
+}
+.nextBtn {
+    padding: 0.7rem;
+    font-size: 0.8rem;
+    color: var(--clr-magnolia);
+    background-color: var(--clr-marineBlue);
+    border-radius: 5px;
+}
