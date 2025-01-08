@@ -122,6 +122,24 @@ h3 {
   position: relative;
 }
 
+.active {
+  border-color: var(--clr-lightBlue) !important;
+  background-color: var(--clr-lightBlue);
+  color: var(--clr-marineBlue) !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.visible {
+  display: grid !important;
+}
+
 .steps {
   display: flex;
   align-items: center;
@@ -136,11 +154,6 @@ h3 {
   padding: 0.3rem 0.6rem;
   font-size: 0.9rem;
   color: var(--clr-white);
-}
-.steps li:first-child {
-  border-color: var(--clr-lightBlue);
-  background-color: var(--clr-lightBlue);
-  color: var(--clr-marineBlue);
 }
 
 @media (max-width: 769px) {
@@ -188,7 +201,7 @@ form {
   text-align: normal;
 }
 
-#fieldset-step2, #fieldset-step3, #fieldset-step1 {
+#fieldset-step2, #fieldset-step3, #fieldset-step4 {
   display: none;
 }
 
@@ -269,16 +282,22 @@ fieldset {
   color: var(--clr-marineBlue);
   font-weight: 700;
   text-align: left;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.2;
 }
 #fieldset-step2 h3 .step2-monthly {
   color: var(--clr-coolGray);
+  font-size: 0.8rem;
 }
 #fieldset-step2 h3 .step2-yearly {
   display: none;
   color: var(--clr-marineBlue);
   font-weight: 500;
   font-size: 0.8rem;
+}
+#fieldset-step2 img {
+  width: 2rem;
+  align-self: center;
 }
 
 #fieldset-step3 {
@@ -305,7 +324,10 @@ fieldset {
   margin-left: auto;
 }
 
-#fieldset-step4 h3, #fieldset-step4 #final-plan {
+#fieldset-step4 span {
+  font-size: 0.9rem;
+}
+#fieldset-step4 h3, #fieldset-step4 #final-plan-fees {
   color: var(--clr-marineBlue);
   font-weight: 700;
 }
@@ -314,7 +336,7 @@ fieldset {
 }
 #fieldset-step4 #total-fees {
   color: var(--clr-purpleBlue);
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
 }
 #fieldset-step4 a {
@@ -329,12 +351,18 @@ label {
 }
 
 input {
-  border: 2px solid var(--clr-lightGray);
+  border: 1.6px solid var(--clr-lightGray);
   border-radius: 5px;
   padding: 0.5rem 0.7rem;
   margin-top: 0.1rem;
   font-weight: 500;
   color: var(--clr-marineBlue);
+}
+input::-moz-placeholder {
+  color: var(--clr-coolGray);
+}
+input::placeholder {
+  color: var(--clr-coolGray);
 }
 input:not(:last-child) {
   margin-bottom: 0.8rem;
@@ -357,10 +385,14 @@ input:focus {
   color: var(--clr-coolGray);
 }
 
-.nextBtn {
+.nextBtn, .confirmBtn {
   padding: 0.7rem;
   font-size: 0.8rem;
   color: var(--clr-magnolia);
   background-color: var(--clr-marineBlue);
   border-radius: 5px;
+}
+
+.confirmBtn {
+  background-color: var(--clr-purpleBlue);
 }/*# sourceMappingURL=style.css.map */

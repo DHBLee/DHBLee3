@@ -22,7 +22,7 @@
   <main class="main">
     <div class="header">
       <ul class="steps">
-        <li>1 <span class="steps-desktop">STEP 1<br> YOUR INFO</span></li>
+        <li class="active">1 <span class="steps-desktop">STEP 1<br> YOUR INFO</span></li>
         <li>2 <span class="steps-desktop">STEP 2<br> SELECT PLAN</span></li>
         <li>3 <span class="steps-desktop">STEP 3<br> ADD-ONS</span></li>
         <li>4 <span class="steps-desktop">STEP 4<br> SUMMARY</span></li>
@@ -33,7 +33,7 @@
       <h3 id="information-h3">Please provide your name, email address, and phone number.</h3>
 
       <form>
-        <fieldset id="fieldset-step1">
+        <fieldset class="fieldset" id="fieldset-step1">
           <label for="name">Name</label>
           <input id="name" name="name" type="text" required placeholder="e.g. Stephen King">
 
@@ -44,7 +44,7 @@
           <input id="number" name="number" type="tel" required placeholder="e.g. +1 234 567 890">
         </fieldset>
 
-        <fieldset id="fieldset-step2">
+        <fieldset class="fieldset" id="fieldset-step2">
           <button class="flex-wrapper">
             <img src="./assets/images/icon-arcade.svg" alt="arcade-img">
             <h3>Arcade<br><span id="arcade-fees" class="step2-monthly">$9/mo</span><br><span class="step2-yearly">2 months free</span></h3>
@@ -70,7 +70,7 @@
           </div>
         </fieldset>
 
-        <fieldset id="fieldset-step3">
+        <fieldset class="fieldset" id="fieldset-step3">
           <button class="flex-wrapper3">
             <input type="checkbox" name="online">
             <h3>Online service<br><span class="step3-description">Access to multiplayer games</span></h3>
@@ -90,11 +90,12 @@
           </button>
         </fieldset>
 
-        <fieldset id="fieldset-step4">
+        <fieldset class="fieldset" id="fieldset-step4">
           <div class="flex-wrapper4">
-            <h3>Arcade (Monthly)<br><a href="#">Change</a></h3>
-            <span id="final-plan">$9/mo</span>
+            <h3 id="final-plan">Arcade (Monthly)<br><a href="#">Change</a></h3>
+            <span id="final-plan-fees">$9/mo</span>
           </div>
+          <hr>
 
           <div class="flex-wrapper4">
             <span>Online service</span>
@@ -113,25 +114,25 @@
         </fieldset>
 
         <div class="btn-desktop">
-          <button class="backBtn">Go Back</button>
+          <button class="backBtn invisible">Go Back</button>
           <button class="nextBtn">Next Step</button>
+          <button class="confirmBtn hidden">Confirm</button>
         </div>
       </form>
     </div>
 
     <div class="btn-proceed">
-      <button class="backBtn">Go Back</button>
+      <button class="backBtn invisible">Go Back</button>
       <button class="nextBtn">Next Step</button>
+      <button class="confirmBtn hidden">Confirm</button>
     </div>
   </main>
-
-  <!-- Sidebar start -->
-
-  <!-- Step 5 end -->
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">DHBLee</a>.
   </div>
+
+  <script src="./js/script.js"></script>
 </body>
 </html>
