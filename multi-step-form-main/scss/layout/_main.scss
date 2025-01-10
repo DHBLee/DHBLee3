@@ -17,7 +17,6 @@
 }
 
 .hidden { display: none; }
-.invisible { opacity: 0; }
 .visible { display: grid !important; }
 
 .steps {
@@ -159,7 +158,6 @@ fieldset {
             font-size: 0.8rem;
         }
         .step2-yearly {
-            display: none;
             color: var(--clr-marineBlue);
             font-weight: 500;
             font-size: 0.8rem;
@@ -170,6 +168,7 @@ fieldset {
         width: 2rem;
         align-self: center;
     }
+    
 
 }
 
@@ -269,6 +268,7 @@ input {
     color: var(--clr-magnolia);
     background-color: var(--clr-marineBlue);
     border-radius: 5px;
+    margin-left: auto
 }
 .confirmBtn {
     @extend .nextBtn;

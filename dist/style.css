@@ -132,10 +132,6 @@ h3 {
   display: none;
 }
 
-.invisible {
-  opacity: 0;
-}
-
 .visible {
   display: grid !important;
 }
@@ -290,7 +286,6 @@ fieldset {
   font-size: 0.8rem;
 }
 #fieldset-step2 h3 .step2-yearly {
-  display: none;
   color: var(--clr-marineBlue);
   font-weight: 500;
   font-size: 0.8rem;
@@ -391,6 +386,7 @@ input:focus {
   color: var(--clr-magnolia);
   background-color: var(--clr-marineBlue);
   border-radius: 5px;
+  margin-left: auto;
 }
 
 .confirmBtn {
