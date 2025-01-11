@@ -34,6 +34,37 @@ const confirmBtn = document.querySelectorAll('.confirmBtn');
 
 const fieldsets = document.querySelectorAll('.fieldset');
 
+const data = {
+    monthly: {
+            arcade: 9,
+            advanced: 12,
+            pro: 15,
+            "online service": 1,
+            "larger storage": 2,
+            "customizable profile": 2,
+        }, 
+    yearly: {
+            arcade: 90,
+            advanced: 120,
+            pro: 150,
+            "online service": 10,
+            "larger storage":20,
+            "customizable profile": 20,
+        },
+    }
+const userData = [
+    {
+        name: "",
+        email: "",
+        "phone number": "123",
+        "plan duration": "monthly",
+        plan: "arcade",
+        addons: [
+            "online service",
+            "larger storage",
+        ]   
+    }
+]
 let count = 1;
 const totalSteps = fieldsets.length;
 
@@ -58,6 +89,10 @@ function previousStep() {
 
 function updateStep() {
 
+    if (count === totalSteps) {
+        
+    }
+
     fieldsets.forEach((field, index) => { 
         field.classList.toggle('visible', index + 1 === count);
         field.classList.toggle('hidden', index + 1 !== count); 
@@ -69,7 +104,6 @@ function updateStep() {
 
     backBtn.forEach(btn => toggleButtonVisiblity(btn , count > 1));
     nextBtn.forEach(btn => toggleButtonVisiblity(btn, count < totalSteps));
-    confirmBtn.forEach(btn => toggleButtonVisiblity(btn, count === totalSteps));
     
 }
 
@@ -79,19 +113,27 @@ function toggleButtonVisiblity(button, isVisible) {
 }
 
 function switchPlan() {
-    console.log('dito napunta');
     const isYearly = planSwitcher.style.transform === "translateX(20px)";
     planSwitcher.style.transform = isYearly ? "translateX(0)" : "translateX(20px)";
-    isYearly ? monthlyPlan() : yearlyPlan();
+    isYearly ? durationPlan("monthly") : durationPlan("yearly");
 }   
 
-function yearlyPlan() {
-    console.log('napunta dito')
-    monthlyFees.forEach(monthly => monthly.classList.add('hidden'));
-    yearlyFees.forEach(yearly => yearly.classList.remove('hidden'));
-}
+function durationPlan (duration) {
+    const string = duration === "monthly" ? "mo" : "yr";
 
-function monthlyPlan() {
-    monthlyFees.forEach(monthly => monthly.classList.remove('hidden'));
-    yearlyFees.forEach(yearly => yearly.classList.add('hidden'));
+    if (duration === "monthly") {
+        monthlyFees.forEach(monthly => monthly.classList.remove('hidden'));
+        yearlyFees.forEach(yearly => yearly.classList.add('hidden'));
+    } else if (duration === "yearly") {
+        monthlyFees.forEach(monthly => monthly.classList.add('hidden'));
+        yearlyFees.forEach(yearly => yearly.classList.remove('hidden'));
+    }
+
+    arcadeFees.textContent = `$${data[duration].arcade}/${string}`;
+    proFees.textContent = `$${data[duration].pro}/${string}`;
+    advancedFees.textContent = `$${data[duration].advanced}/${string}`;
+
+    onlineFees.forEach(online => online.textContent = `+$${data[duration]["online service"]}/${string}`)
+    largerFees.forEach(larger => larger.textContent = `+$${data[duration]["larger storage"]}/${string}`)
+    customFees.forEach(custom => custom.textContent = `+$${data[duration]["customizable profile"]}/${string}`)
 }
