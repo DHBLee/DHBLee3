@@ -230,7 +230,7 @@ h3 {
 
 .header {
   flex: 0 0 30%;
-  background-image: url("/multi-step-form-main/assets/images/bg-sidebar-mobile.svg");
+  background-image: url("/assets/images/bg-sidebar-mobile.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -239,7 +239,7 @@ h3 {
 }
 @media (min-width: 768px) {
   .header {
-    background-image: url("/multi-step-form-main/assets/images/bg-sidebar-desktop.svg");
+    background-image: url("/assets/images/bg-sidebar-desktop.svg");
     margin: 0.5rem;
     border-radius: 5px;
   }
