@@ -515,6 +515,9 @@ input:focus {
   border-radius: 5px;
   margin-left: auto;
 }
+.nextBtn:hover, .confirmBtn:hover {
+  box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.3);
+}
 
 .confirmBtn {
   background-color: var(--clr-purpleBlue);

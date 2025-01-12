@@ -127,7 +127,8 @@ flexWrapperBtns3.forEach(btn => {
     });
 });
 
-function nextStep() {
+function nextStep(e) {
+    e.preventDefault();
     const validation = validations[count];
     if (validation && !validation()) {
         console.log('errorr');
@@ -141,7 +142,8 @@ function nextStep() {
 
 };
 
-function previousStep() {
+function previousStep(e) {
+    e.preventDefault();
     if (count > 1) {
         count--;
         updateStep();
@@ -348,7 +350,7 @@ function stepTwoValidation() {
 
 function stepThreeValidation() {
     let isValid = true;
-
+    userData[0]["addons"].splice(0, userData[0]["addons"].length);
     flexWrapperBtns3.forEach(btn => {
         const input = btn.querySelector('input');
         if (input.checked) {
