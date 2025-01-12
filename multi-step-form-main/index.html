@@ -22,10 +22,19 @@
   <main class="main">
     <div class="header">
       <ul class="steps">
-        <li class="active">1 <span class="steps-desktop">STEP 1<br> YOUR INFO</span></li>
-        <li>2 <span class="steps-desktop">STEP 2<br> SELECT PLAN</span></li>
-        <li>3 <span class="steps-desktop">STEP 3<br> ADD-ONS</span></li>
-        <li>4 <span class="steps-desktop">STEP 4<br> SUMMARY</span></li>
+        <li>
+          <span class="number-steps active">1</span>
+          <span class="steps-desktop">STEP 1<br> <span>YOUR INFO</span></span>
+        </li>
+        <li>
+          <span class="number-steps">2</span>         
+          <span class="steps-desktop">STEP 2<br> <span>SELECT PLAN</span></span></li>
+        <li>
+          <span class="number-steps">3</span>         
+          <span class="steps-desktop">STEP 3<br> <span>ADD-ONS</span></span></li>
+        <li>
+          <span class="number-steps">4</span>         
+          <span class="steps-desktop">STEP 4<br> <span>SUMMARY</span></span></li>
       </ul>
     </div>
     <div class="information">
@@ -34,31 +43,33 @@
 
       <form>
         <fieldset class="fieldset" id="fieldset-step1">
-          <label for="name">Name</label>
+          <label for="name">Name <span id="name-error"></span></label>
           <input id="name" name="name" type="text" required placeholder="e.g. Stephen King">
 
-          <label for="email">Email Address</label>
+          <label for="email">Email Address <span id="email-error"></span></label>
           <input id="email" name="email" type="email" required placeholder="e.g. stephenking@lorem.com">
 
-          <label for="number">Phone Number</label>
+          <label for="number">Phone Number <span id="number-error"></span></label>
           <input id="number" name="number" type="tel" required placeholder="e.g. +1 234 567 890">
         </fieldset>
 
         <fieldset class="fieldset" id="fieldset-step2">
-          <button class="flex-wrapper">
-            <img src="./assets/images/icon-arcade.svg" alt="arcade-img">
-            <h3>Arcade<br><span id="arcade-fees" class="step2-monthly">$9/mo</span><br><span class="step2-yearly hidden">2 months free</span></h3>
-          </button>
-
-          <button class="flex-wrapper">
-            <img src="./assets/images/icon-advanced.svg" alt="advanced-img">
-            <h3>Advanced<br><span id="advanced-fees" class="step2-monthly">$12/mo</span><br><span class="step2-yearly hidden">2 months free</span></h3>
-          </button>
-
-          <button class="flex-wrapper">
-            <img src="./assets/images/icon-pro.svg" alt="pro-img">
-            <h3>Pro<br><span id="pro-fees" class="step2-monthly">$15/mo</span><br><span class="step2-yearly hidden">2 months free</span></h3>
-          </button>
+          <div class="flex">
+            <button class="flex-wrapper" type="button">
+              <img src="./assets/images/icon-arcade.svg" alt="arcade-img">
+              <h3>Arcade<br><span id="arcade-fees" class="step2-monthly">$9/mo</span><br><span class="step2-yearly hidden">2 months free</span></h3>
+            </button>
+  
+            <button class="flex-wrapper" type="button">
+              <img src="./assets/images/icon-advanced.svg" alt="advanced-img">
+              <h3>Advanced<br><span id="advanced-fees" class="step2-monthly">$12/mo</span><br><span class="step2-yearly hidden">2 months free</span></h3>
+            </button>
+  
+            <button class="flex-wrapper" type="button">
+              <img src="./assets/images/icon-pro.svg" alt="pro-img">
+              <h3>Pro<br><span id="pro-fees" class="step2-monthly">$15/mo</span><br><span class="step2-yearly hidden">2 months free</span></h3>
+            </button>
+          </div>
 
           <div class="flex-wrapper2">
             <h3 id="monthly">Monthly</h3>
@@ -71,48 +82,28 @@
         </fieldset>
 
         <fieldset class="fieldset" id="fieldset-step3">
-          <button class="flex-wrapper3">
-            <input type="checkbox" name="online">
+          <button class="flex-wrapper3" type="button">
+            <input type="checkbox" name="online" data-addons="online service">
             <h3>Online service<br><span class="step3-description">Access to multiplayer games</span></h3>
             <span class="step3-fees online-fees">+$1/mo</span>
           </button>
 
-          <button class="flex-wrapper3">
-            <input type="checkbox" name="larger">
+          <button class="flex-wrapper3" type="button">
+            <input type="checkbox" name="larger" data-addons="larger storage">
             <h3>Larger storage<br><span class="step3-description">Extra 1TB of cloud save</span></h3>
             <span class="step3-fees larger-fees">+$2/mo</span>
           </button>
 
-          <button class="flex-wrapper3">
-            <input type="checkbox" name="custom">
+          <button class="flex-wrapper3" type="button">
+            <input type="checkbox" name="custom" data-addons="customizable profile">
             <h3>Customizable profile<br><span class="step3-description">Custom theme on your profile</span></h3>
             <span class="step3-fees custom-fees">+$2/mo</span>
           </button>
         </fieldset>
 
         <fieldset class="fieldset" id="fieldset-step4">
-          <div class="flex-wrapper4">
-            <h3 id="final-plan">Arcade (Monthly)<br><a href="#">Change</a></h3>
-            <span id="final-plan-fees">$9/mo</span>
-          </div>
-          <hr>
-
-          <div class="flex-wrapper4">
-            <span>Online service</span>
-            <span class="step3-fees online-fees">+$1/mo</span>
-          </div>
-
-          <div class="flex-wrapper4">
-            <span>Larger storage</span>
-            <span class="step3-fees larger-fees">+$2/mo</span>
-          </div>
-
-          <div class="flex-wrapper4">
-            <span id="total-plan">Total (per month)</span>
-            <span id="total-fees">+$12/mo</span>
-          </div>
+      
         </fieldset>
-
         <div class="btn-desktop">
           <button class="backBtn hidden">Go Back</button>
           <button class="nextBtn">Next Step</button>
@@ -120,19 +111,20 @@
         </div>
       </form>
     </div>
+    <div class="confirmation-page hidden">
+      <img src="./assets/images/icon-thank-you.svg" alt="">
+      <h2>Thank you!</h2>
+      <p>Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel Free to email us at support@loremgaming.com.</p>
+    </div>
 
     <div class="btn-proceed">
-      <button class="backBtn hidden">Go Back</button>
+      <button class="backBtn">Go Back</button>
       <button class="nextBtn">Next Step</button>
       <button class="confirmBtn hidden">Confirm</button>
     </div>
   </main>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">DHBLee</a>.
-  </div>
-
+ 
   <script src="./js/script.js"></script>
 </body>
 </html>

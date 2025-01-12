@@ -8,6 +8,18 @@
 
 .main {
     position: relative;
+    @media (min-width: 768px) {
+        display: flex;
+        flex-shrink: 0;
+        width: calc(100% - clamp(10rem, 4.718309859154929rem + 22.535211267605636vw, 25rem));
+        min-height: 500px;
+        max-height: 500px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: auto;
+        background-color: var(--clr-white);
+        border-radius: 10px;
+    }
 }
 
 .active {
@@ -17,12 +29,19 @@
 }
 
 .hidden { display: none; }
-.visible { display: grid !important; }
+.visible { 
+    display: grid !important;
+}
 
 .steps {
     @include display(flex, 1rem, center, center);
     
     li {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    li > :first-child {
         border: 1px solid var(--clr-white);
         font-weight: 500;
         border-radius: 50%;
@@ -30,19 +49,59 @@
         font-size: 0.9rem;
         color: var(--clr-white);
     }
+
+    @media (min-width: 768px) {
+        display: grid;
+        justify-content: left;
+        padding-left: 2rem;
+    }
+
+    
 }
 .steps-desktop {
     @media (max-width: 769px) {
         display: none;
     }
+    line-height: 1.3;
+    font-size: 0.6rem;
+    color: var(--clr-coolGray);
+    span {
+        font-size: 0.8rem;
+        letter-spacing: 0.1rem;
+        font-weight: 500;
+        color: var(--clr-white)
+    }
 }
 .btn-desktop {
+    @include display(flex, 0, center, space-between, normal);
+    background-color: var(--clr-white);
+    padding: 0.5rem;
+    padding-top: 3rem;
+
     @media (max-width: 769px) {
         display: none;
     }
 }
+.btn-proceed {
+    @include display(flex, 0, center, space-between, normal);
+    background-color: var(--clr-white);
+    padding: 0.5rem;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
 .header {
+    flex: 0 0 30%;
     background-image: url('/multi-step-form-main/assets/images/bg-sidebar-mobile.svg');
+
+    @media(min-width: 768px) {
+        background-image: url('/multi-step-form-main/assets/images/bg-sidebar-desktop.svg');
+        margin: 0.5rem;
+        border-radius: 5px;
+    }
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -52,8 +111,9 @@
 }
 
 .information {
+    flex: 0 0 70%;
     @include display(grid, 0.5rem, center, normal, normal);
-
+    height: auto;
     background-color: var(--clr-white);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -62,6 +122,13 @@
     margin-top: -2rem;
     margin-bottom: 6rem;
     margin-inline: auto;
+
+    @media (min-width: 768px) {
+        margin: 0;
+        box-shadow: none;
+        padding-left: 4.5rem;
+        padding-right: 4rem;
+    } 
 }
 
 form {
@@ -74,7 +141,8 @@ form {
 
 fieldset {
     border: none;
-    display: grid;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -83,9 +151,19 @@ fieldset {
     border: 2px solid var(--clr-lightGray);
     border-radius: 10px;
     padding: 0.8rem;
-
-    &:focus {
+    
+    &:hover {
         border-color: var(--clr-purpleBlue);
+    }
+    &:focus {
+        background-color: var(--clr-lightGray);
+        border-color: var(--clr-purpleBlue);
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: column;
+        flex: 1;
+        
     }
 }
 
@@ -122,11 +200,28 @@ fieldset {
             transition: all 0.3s ease;   
         }
     }
+
+    @media (min-width: 768px) {
+        flex-direction: row !important;
+    }
 }
 
 .flex-wrapper3 {
     @extend .flex-wrapper;
     align-items: center;
+
+    &:hover {
+        border-color: var(--clr-purpleBlue);
+    }
+
+    input:checked {
+        border-color: var(--clr-purpleBlue);
+        background-color: var(--clr-lightGray);
+    }
+
+    @media(min-width: 768px) {
+        flex-direction: row !important;
+    }
 }
 
 .flex-wrapper4 {
@@ -140,6 +235,10 @@ fieldset {
 
     &:last-child {
         margin-top: 0.8rem;
+    }
+
+    #change:hover {
+        color: var(--clr-purpleBlue);
     }
 }
 
@@ -167,9 +266,22 @@ fieldset {
     img {
         width: 2rem;
         align-self: center;
-    }
-    
 
+        @media (min-width: 768px) {
+            align-self: self-start !important;
+        }
+    }
+
+    .flex {
+        display: grid;
+        gap: 0.5rem;
+
+        @media (min-width: 768px) {
+            display: flex;
+            width: 100%;
+
+        }
+    }
 }
 
 #fieldset-step3 {
@@ -227,8 +339,14 @@ fieldset {
 }
 
 label {
-    font-size: 0.8rem;
+    @include display(flex, 0, center, space-between);
+    font-size: 0.7rem;
     color: var(--clr-marineBlue);
+
+    span {
+        color: var(--clr-red);
+        font-weight: 700;
+    }
 }
 
 input {
@@ -252,13 +370,6 @@ input {
     }
 }
 
-
-.btn-proceed {
-    @include display(flex, 0, center, space-between, normal);
-    background-color: var(--clr-white);
-    padding: 0.5rem;
-}
-
 .backBtn {
     color: var(--clr-coolGray);
 }
@@ -274,4 +385,30 @@ input {
     @extend .nextBtn;
     background-color: var(--clr-purpleBlue);
 
+}
+
+.confirmation-page {
+    @extend .information;
+    height: min-content;
+    
+    @include display(none, 0.8rem, center, center, center);
+    
+    img {
+        width: 3rem;
+        margin: auto;
+    }
+
+    h2 {
+        font-weight: 700;
+    }
+
+    p {
+        max-width: 60ch;
+        color: var(--clr-coolGray);
+    }
+
+    @media (min-width: 768px) {
+        margin: auto;
+        background-color: transparent;
+    }
 }
