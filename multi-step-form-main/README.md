@@ -52,6 +52,11 @@ Users should be able to:
 
 ## My process
 
+I first built the HTML Structure
+Proceeded to styling the webpage
+adding JS functions
+Revisited HTML and CSS for further enhancement
+In the end, my css got messy :D
 
 ### Built with
 
@@ -69,12 +74,13 @@ Users should be able to:
 
 ### What I learned
 
-
+I learned more about JS
+I learned that I don't know more about CSS that I would've thought
 
 
 ### Continued development
 
-
+Better CSS code and overall Website 
 
 
 ### Useful resources
