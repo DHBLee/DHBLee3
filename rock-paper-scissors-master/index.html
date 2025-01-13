@@ -5,19 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="../dist/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alata&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&family=Epilogue:ital,wght@0,100..900;1,100..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Overpass:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
   
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
-
-  Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
@@ -27,11 +21,68 @@
 </head>
 <body>
 
+  <dialog id="dialog">
+    <div>
+      <span>RULES</span>
+      <img class="rules-img mobile" src="./images/image-rules.svg" alt="">
+      <img id="close" src="./images/icon-close.svg" alt="">
+    </div>
+    <img class="rules-img desktop" src="./images/image-rules.svg" alt="">
+  </dialog>
+
+  <main>
+    <div class="section1">
+      <span id="title">ROCK<br>PAPER<br>SCISSORS</span>
+      <div class="score">
+        <span id="score-title">SCORE</span>
+        <span id="score-value">0</span>
+      </div>
+    </div>
+
+    <div class="section2">
+      <button class="paper-style" id="paper" data-value="paper">
+        <img src="./images/icon-paper.svg" alt="">
+      </button>
+      <button class="scissors-style" id="scissors" data-value="scissors">
+        <img src="./images/icon-scissors.svg" alt="">
+      </button>
+      <button class="rock-style" id="rock" data-value="rock">
+        <img src="./images/icon-rock.svg" alt="">
+      </button>
+      <img class="triangle" src="./images/bg-triangle.svg" alt="">
+    </div>
+
+    <div class="section3">
+      <div class="player">
+        <span>YOU PICKED</span>
+      </div>
+
+      <div class="result desktop">
+        <span class="result-title">NONE</span>
+        <button class="play-again">PLAY AGAIN</button>
+      </div>
+
+      <div class="computer">
+        <button class="circle">
+        
+        </button>
+        <span>THE HOUSE PICKED</span>
+      </div>
+    </div>
+
+    <div class="result mobile" id="result">
+      <span class="result-title">NONE</span>
+      <button class="play-again">PLAY AGAIN</button>
+    </div>
+    <button id="open-modal">RULES</button>
+  </main>
 
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
