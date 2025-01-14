@@ -1,0 +1,13 @@
+.light-mode {
+    --clr-text: hsl(200, 15%, 8%);
+    --clr-input: hsl(0, 0%, 52%);
+    --clr-bg: hsl(0, 0%, 98%);
+    --clr-element: hsl(0, 0%, 100%);
+}
+
+.dark-mode {
+    --clr-text: hsl(0, 0%, 100%);
+    --clr-input: hsl(0, 0%, 52%);
+    --clr-bg: hsl(207, 26%, 17%);
+    --clr-element: hsl(209, 23%, 22%);
+}
