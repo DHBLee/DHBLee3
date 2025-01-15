@@ -25,6 +25,8 @@
         gap: 0.2rem;
         font-size: 0.9rem;
         font-weight: 600;
+        transition: transform 0.3 ease;
+        color: var(--clr-text);
 
         &::before {
             content: url('/rest-countries-api-with-color-theme-switcher-master/images/moon.svg');
@@ -34,6 +36,10 @@
             top: 2px;
             left: -5px;
             
+        }
+
+        &:hover {
+            transform: scale(1.1);
         }
     }
 
@@ -94,9 +100,10 @@ main {
         box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
         background-color: var(--clr-element);
-
+        color: var(--clr-text);
         option {
-            border: none
+            border: none;
+            color: var(--clr-text)
         }
     }
 
@@ -114,11 +121,21 @@ main {
     .country {
         box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
+        cursor: pointer;
+        max-width: 320px;
+        max-height: 383px;
+        margin: auto;
+        background-color: var(--clr-element);
 
         img {
             aspect-ratio: 16 / 11;
             object-fit: cover;
             width: 100%;
+        }
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05)
         }
     }
 
@@ -135,6 +152,7 @@ main {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    color: var(--clr-text);
     &::before {
         display: inline-block;
         content: url('/rest-countries-api-with-color-theme-switcher-master/images/arrow.svg');
@@ -180,28 +198,32 @@ main {
 
     .border__countries {
         @include display(flex, 0.7rem);
+        width: 100%;
         flex-direction: column;
+        flex-wrap: wrap;
 
-        @media(min-width: 768px) {
+        @media(min-width: 1040px) {
             flex-direction: row;
             align-items: center;
             font-size: clamp(0.7rem, 0.3571428571428571rem + 0.7142857142857143vw, 1rem);
         }
 
         &__info {
+            flex-grow: 1;
             display: grid;
             gap: 0.8rem;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, 7rem);
+            grid-template-rows: repeat(4, min-content);
             text-align: center;
 
             span {
                 box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
                 padding: 0.4rem;
                 width: 7rem;
-            }
-
-            @media(min-width: 1194px) {
-                grid-template-columns: repeat(3, 1fr);
+                height: min-content;
+                color: var(--clr-text);
+                font-weight: 300;
+                background-color: var(--clr-element);
             }
         }
     }
@@ -210,7 +232,7 @@ main {
         width: 100%;
         min-width: 20rem;
         max-width: 30rem;
-
+        object-fit: cover;
         aspect-ratio: 16/11;
     }
     
