@@ -174,7 +174,7 @@ h3 {
   color: var(--clr-text);
 }
 .navbar #toggle__theme::before {
-  content: url("/rest-countries-api-with-color-theme-switcher-master/images/moon.svg");
+  content: url("/images/moon.svg");
   position: relative;
   z-index: 999;
   width: 0.9rem;
@@ -225,7 +225,7 @@ main #search {
   padding: 0.8rem 0.5rem;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  background-image: url("/rest-countries-api-with-color-theme-switcher-master/images/search.svg");
+  background-image: url("/images/search.svg");
   background-position: left 1.5rem center;
   background-repeat: no-repeat;
   background-size: 1rem;
@@ -306,7 +306,7 @@ main .wrapper {
 }
 #back::before {
   display: inline-block;
-  content: url("/rest-countries-api-with-color-theme-switcher-master/images/arrow.svg");
+  content: url("/images/arrow.svg");
   width: 1rem;
   margin-top: 5px;
 }
