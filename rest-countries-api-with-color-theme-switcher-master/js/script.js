@@ -106,8 +106,10 @@ function countryDetails(country) {
 }
 
 function getBorderCountries(country) {
+    console.log(dataStore);
+    const borders = Array.isArray(country.borders) ? country.borders : [];
     const borderCountries = dataStore.filter(item =>
-        country.borders.includes(item.alpha3Code)
+        borders.includes(item.alpha3Code)
     );
     console.log(borderCountries);
     return borderCountries
