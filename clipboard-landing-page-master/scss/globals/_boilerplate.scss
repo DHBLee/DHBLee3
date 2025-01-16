@@ -23,7 +23,7 @@ body {
     height: 100%;
 
     & > * {
-        padding-inline: 1.3rem;
+        padding-inline: clamp(1.3rem, -1.0591549295774645rem + 10.065727699530516vw, 8rem);
     }
 }
 

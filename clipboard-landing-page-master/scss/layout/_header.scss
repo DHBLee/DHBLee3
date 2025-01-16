@@ -1,9 +1,12 @@
 header {
-    background-image: url('/clipboard-landing-page-master/images/bg-header-mobile.png');
+    background-image: url('/images/bg-header-mobile.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 
+    @media (min-width: 768px) {
+        background-image: url('/images/bg-header-desktop.png');
+    }
     display: grid;
     gap: 2rem;
     padding-top: 6rem;
@@ -11,7 +14,7 @@ header {
     
     img {
         margin-inline: auto;
-        width: 5rem;
+        width: clamp(5rem, 3.943661971830986rem + 4.507042253521126vw, 8rem);
     }
 
 

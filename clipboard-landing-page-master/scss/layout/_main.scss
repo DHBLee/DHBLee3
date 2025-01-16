@@ -8,11 +8,26 @@
 
 .info__wrapper {
     @include display(grid, 0.7rem, center, center, center);
+
+    @media (min-width:768px) {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;   
+        justify-content: flex-start; 
+        text-align: center;  
+
+        img {
+            max-height: 32px;
+        }
+    }
 }
 
 .buttons {
     @include display(grid, 1rem);
 
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
     button {
         color: white;
         width: 100%;
@@ -21,15 +36,33 @@
         font-size: 0.8rem;
         font-weight: 600;
         max-width: 17.4rem;
-        margin: auto;
+
+        @media (max-width: 767.9px) {
+            margin: auto;
+        }
 
         &:first-child {
             background-color: var(--clr-cyan);
             border-bottom: 2px solid var(--clr-cyan);
+
+            @media (min-width:768px) {
+                margin-left: auto !important;
+            }
+
+            &:hover {
+                box-shadow: 0 4px 6px var(--clr-cyan);
+            }
         }
         &:last-child {
             background-color: var(--clr-lightblue);
             border-bottom: 2px solid var(--clr-lightblue);
+            @media (min-width:768px) {
+                margin-right: auto !important;   
+            }
+
+            &:hover {
+                box-shadow: 0 4px 6px var(--clr-lightblue);
+            }
         }
     }
 }
@@ -41,6 +74,9 @@ main {
     padding-top: 3.5rem;
     padding-bottom: 8rem;
 
+    @media(min-width: 768px) {
+        gap: 10rem;
+    }
     .section1 {
         @include display(grid, 3rem, center, center);
 
@@ -50,12 +86,29 @@ main {
             
             @media (min-width: 768px) {
                 flex-direction: row;
-                flex: 50 / 50;
+                align-items: center;
+                gap: clamp(3rem, 0.7142857142857144rem + 4.761904761904762vw, 5rem);
+
+                 img {
+                    flex: 1;
+                    width: 50%;
+                    margin-left: -8rem;
+                 }
             }
         }   
         
         &__wrapper2 {
-            @include display(grid, 2rem)
+            @include display(flex, 2rem);
+            flex-direction: column;
+            flex: 1;
+
+            @media (min-width: 768px) {
+                text-align: left;
+
+                #p {
+                    margin-right: auto !important;
+                }
+            }
         }
 
         &__wrapper3 {
@@ -66,14 +119,24 @@ main {
     .section2 {
         @include display(flex, 3rem, center, center);
         flex-direction: column;
+
+        @media (min-width:768px) {
+            img {
+                margin-bottom: auto
+            }
+        }
     }
 
     .section3 {
         @include display(grid, 3rem, center, center);
 
         .section3__wrapper {
-            @include display(flex, 3rem);
-            flex-direction: column;
+            @include display(grid, 3rem);
+
+            @media (min-width: 768px) {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 1fr;
+            }
         }
         
         img {
@@ -88,12 +151,20 @@ main {
         @include display(flex, 4rem);
         flex-direction: column;
 
+        @media (min-width: 768px) {
+            flex-direction: row;
+        }
         img {
             max-width: 9rem;
             margin: auto;
 
             &:nth-child(2), &:nth-child(4), &:nth-child(5) {
                 width: 7.5rem;
+            }
+
+            @media (min-width: 768px) {
+                min-width: 4rem;
+                width: 50%;
             }
         }
     }
