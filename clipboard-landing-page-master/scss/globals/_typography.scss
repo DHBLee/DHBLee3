@@ -1,0 +1,26 @@
+p {
+    color: var(--clr-blue);
+    font-weight: 300;
+    max-width: 29.6ch;
+    margin: auto;
+}
+
+h1, h2, h3 {
+    color: var(--clr-darkblue);
+    font-weight: 600;
+}
+h1 {
+    font-size: 1.5rem;
+    max-width: 15ch;
+    margin: auto;
+}
+
+h2 {
+    font-size: 1.3rem;
+    max-width: 17ch;
+    margin: auto;
+}
+
+h3 {
+    font-size: 1.1rem;
+}

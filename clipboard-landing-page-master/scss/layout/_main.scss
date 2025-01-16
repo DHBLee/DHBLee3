@@ -1,0 +1,105 @@
+@mixin display($display, $gap: 0, $align: normal, $justify: normal, $text-align: normal) {
+    display: $display;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+    text-align: $text-align;
+}
+
+.info__wrapper {
+    @include display(grid, 0.7rem, center, center, center);
+}
+
+.buttons {
+    @include display(grid, 1rem);
+
+    button {
+        color: white;
+        width: 100%;
+        border-radius: 25px;
+        padding: 0.6rem 0;
+        font-size: 0.8rem;
+        font-weight: 600;
+        max-width: 17.4rem;
+        margin: auto;
+
+        &:first-child {
+            background-color: var(--clr-cyan);
+            border-bottom: 2px solid var(--clr-cyan);
+        }
+        &:last-child {
+            background-color: var(--clr-lightblue);
+            border-bottom: 2px solid var(--clr-lightblue);
+        }
+    }
+}
+
+
+
+main {
+    @include display(grid, 6rem, center, center, center);
+    padding-top: 3.5rem;
+    padding-bottom: 8rem;
+
+    .section1 {
+        @include display(grid, 3rem, center, center);
+
+        &__wrapper1 {
+            @include display(flex, 2.5rem);
+            flex-direction: column;
+            
+            @media (min-width: 768px) {
+                flex-direction: row;
+                flex: 50 / 50;
+            }
+        }   
+        
+        &__wrapper2 {
+            @include display(grid, 2rem)
+        }
+
+        &__wrapper3 {
+            @include display(grid, 0.5rem)
+        }
+    }
+
+    .section2 {
+        @include display(flex, 3rem, center, center);
+        flex-direction: column;
+    }
+
+    .section3 {
+        @include display(grid, 3rem, center, center);
+
+        .section3__wrapper {
+            @include display(flex, 3rem);
+            flex-direction: column;
+        }
+        
+        img {
+            margin-inline: auto;
+            margin-bottom: 1rem;
+
+
+        }
+    }
+
+    .section4 {
+        @include display(flex, 4rem);
+        flex-direction: column;
+
+        img {
+            max-width: 9rem;
+            margin: auto;
+
+            &:nth-child(2), &:nth-child(4), &:nth-child(5) {
+                width: 7.5rem;
+            }
+        }
+    }
+
+    .section5 {
+        @include display(grid, 2rem, center, center);
+    }
+
+}

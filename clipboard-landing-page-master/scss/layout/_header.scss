@@ -1,0 +1,18 @@
+header {
+    background-image: url('/clipboard-landing-page-master/images/bg-header-mobile.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: grid;
+    gap: 2rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    
+    img {
+        margin-inline: auto;
+        width: 5rem;
+    }
+
+
+}
