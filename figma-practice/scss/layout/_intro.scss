@@ -1,0 +1,74 @@
+@use 'main' as *;
+
+.first__page {
+    
+    display: none;
+}
+
+
+.login {
+    @include display(grid, 4.286rem, center);
+
+    &__grid__wrapper {
+        @include display(grid, 2.286rem);
+    }
+    &__information {
+        @include display(grid, 1.143rem);
+
+
+    }
+    span {
+        text-align: center
+    }
+}
+
+
+#intro-form {
+    @include display(grid, 2rem);
+
+    label {
+        font-size: 0.857rem;
+        color: var(--clr-darkGray);
+        font-weight: 700;
+    }
+
+    input {
+        padding: 12px;
+        border: 1px solid var(--clr-gray);
+        border-radius: 6px;
+        
+    }
+}
+
+fieldset{
+    @include display(grid, 0.286rem);
+}
+
+.btns {
+    @include display(flex, 1.143rem, center, center, center);
+    flex-direction: column;
+    
+    & > * {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 8px;
+    }
+
+    #loginBtn {
+        background-color: var(--clr-blue);
+        color: var(--clr-white);
+    }
+    #forgotBtn {
+        color: var(--clr-blue);
+        font-weight: 800;
+    }
+}
+
+#sign-up {
+    color: var(--clr-blue);
+    font-weight: 800;
+}
+
+.keep__me {
+    @include display(flex, 0.5rem, center)
+}

@@ -1,0 +1,198 @@
+@mixin display($display, $gap: 0, $align: normal, $justify: normal, $text-align: normal) {
+    display: $display;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+    text-align: $text-align;
+}
+
+
+
+header {
+    @include display(flex, 0, center, space-between);
+    border-bottom: 1px solid var(--clr-gray);
+    padding-bottom: 20px;
+
+    .header__wrapper {
+        @include display(flex, 1.214rem, center);
+
+        hr {
+            height: 2.286rem;
+        }
+    }
+
+
+    #shopping-cart {
+        width: 3.429rem;
+        height: 3.429rem;
+        text-align: center;
+        border-radius: 16px;
+        background-color: var(--clr-lightGray2);
+        font-size: 1.429rem;
+
+        display: flex; /* Enables flexbox */
+        justify-content: center; /* Horizontally center */
+        align-items: center;
+
+        i {
+            cursor: pointer;
+            color: var(--clr-gray);
+        }
+    }
+    #profile {
+        width: 3.429rem;
+    }
+
+    #menuBtn {
+        padding: 14px;
+        border-radius: 16px;
+        background-color: var(--clr-lightGray2);
+        img {
+            width: 1.143rem;
+        }
+    }
+}
+
+.main {
+    @include display(grid, 40px, center, center);
+    margin-top: 24px;
+    display: none !important;
+
+    .section1 {
+        @include display(grid, 32px);
+
+        .discounts {
+            @include display(flex, 30px);
+            flex-direction: column;
+            
+            &__wrapper {
+                @include display (flex, 0 , center, space-between);
+                margin-bottom: 4px;
+            }
+            span {
+                font-size: 1rem;
+                color: var(--clr-grayBlue);
+            }
+            h1 {
+                font-size: 2.857rem;
+                font-weight: 800;
+            }
+            & > * {
+                padding: 16px 16px 0 16px;
+                border-radius: 16px;
+            }
+
+            &__dessert {
+                background-color:  var(--clr-lightGray1);
+
+                h1 {
+                    color: var(--clr-blue);
+                }
+            }
+            &__food {
+                background-color: var(--clr-lightGray);
+
+                h1 {
+                    color: var(--clr-orange);
+                }
+            }
+        }
+
+        .food__categories {
+            @include display(grid, 15px, center, center, center);
+            grid-template-columns: repeat(3, 1fr);
+            
+            div {
+                @include display(grid, 12px);
+                margin: auto;
+                width: 100%;
+                padding: 12px;
+                border: 1px solid var(--clr-darkGray1);
+                border-radius: 16px;
+
+                img {
+                    margin: auto;
+                }
+                span {
+                    font-size: 0.929rem;
+                    font-weight: 600;
+                    color: var(--clr-darkGray);
+                }
+            }
+        }
+    }
+
+    .section2 {
+        @include display(grid, 16px);
+
+        .cards {
+            @include display(grid, 30px, center, center);
+            position: relative;
+
+            .featured {
+                position: absolute;
+                right: 0;
+                border-radius: 0 16px 0 16px;
+                padding: 8px 16px;
+                font-size: 0.786rem;
+                color: var(--clr-white);
+                font-weight: 600;
+                letter-spacing: 0.6px;
+                background-color: var(--clr-blue);
+
+            }
+            .card {
+                border: 1px solid var(--clr-lightGray2);
+                border-radius: 16px;
+                overflow: hidden;
+
+                &__wrapper {
+                    @include display(grid, 14px);
+                    padding: 16px
+                }
+                &__name {
+                    @include display(flex, 0, center, space-between);
+
+                    font-size: 1.429rem;
+
+                    h4 {
+                        font-size: 1.286rem;
+                        font-weight: 700;
+                    }
+                    i {
+                        cursor: pointer;
+                        color: var(--clr-gray)
+                    }
+                }
+                &__details {
+                    @include display(flex, 4px, center);
+
+                    span {
+                        font-size: 0.857rem;
+                        color: var(--clr-darkGray1);
+                    }
+                    img {
+                        width: 0.857rem;
+                    }
+                }
+                &__categories {
+                    @include display(grid, 8px, center);
+                    grid-template-columns: repeat(auto-fit, 5.571rem);
+                }
+                &__category {
+                    @include display(flex, 4px, center, center);
+                    background-color: var(--clr-lightGray2);
+                    border-radius: 13px;
+                    padding: 6px 0;
+                    img {
+                        width: 0.857rem;
+                    }
+                    span {
+                        color: var(--clr-darkGray);
+                        font-size: 0.857rem;
+                    }
+                }
+            }
+        }
+    }
+}

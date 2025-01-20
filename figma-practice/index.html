@@ -8,40 +8,378 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alata&family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&family=Epilogue:ital,wght@0,100..900;1,100..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Overpass:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
 </head>
 <body>
-    <div class="first-page">
+    <div class="first__page">
         <div class="login">
             <img src="./images/logo.png" alt="">
-            <div class="grid__wrapper">
+            <div class="login__grid__wrapper">
                 <div class="login__information">
                     <h1>Login</h1>
                     <p>Sign in with your data that you entered during your registration.</p>
                 </div>
-                <form action="">
+                <form id="intro-form" action="">
                     <fieldset>
                         <label for="email">Email</label>
-                        <input id="email" type="email" required>
+                        <input id="email" type="email" placeholder="name@example.com" required>
                     </fieldset>
                     <fieldset>
                         <label for="password">Password</label>
-                        <input id="password" type="password" required>
+                        <input id="password" type="password" placeholder="min. 8 characters" required>
                     </fieldset>
-                    <input type="checkbox"> Keep me logged in
+                    <div class="keep__me">
+                        <input id="checkbox" type="checkbox">
+                        <label for="checkbox">Keep me logged in</label>
+                    </div>
                     <div class="btns">
                         <button id="loginBtn">Login</button>
                         <button id="forgotBtn">Forgot password</button>
                     </div>
                 </form>
-                <span>Don't have an account? <a href="#" id="sign-up">Sign up</a></span>
             </div>
+            <span>Don't have an account? <a href="#" id="sign-up">Sign up</a></span>
         </div>
 
         <div class="intro">
 
         </div>
     </div>
+
+    <main>
+        <header>
+            <img id="logo" src="./images/logo.png" alt="">
+            
+            <div class="header__wrapper">
+                <a id="shopping-cart" href="">
+                    <i class="ri-shopping-bag-3-line"></i>
+                </a> 
+                <img id="profile" src="./images/profile.png" alt="">
+                <hr>
+                <span id="menuBtn">
+                    <img src="./images/menu.svg" alt="">
+                </span>
+            </div>
+        </header>
+        <div class="main">
+            <section class="section1">
+                <div class="discounts">
+                    <div class="discounts__dessert">
+                        <div class="discounts__wrapper">
+                            <h3>All desserts</h3>
+                            <span>Desserty</span>
+                        </div>
+                        <h1>20% OFF</h1>
+                        <img src="./images/cupcake.png" alt="">
+                    </div>
+                    <div class="discounts__food">
+                        <div class="discounts__wrapper">
+                            <h3>Big Burgers</h3>
+                            <span>Foodies</span>
+                        </div>
+                        <h1>50% OFF</h1>
+                        <img src="./images/burgerBg.png" alt="">
+                    </div>
+                </div>
+                <div class="food__categories">
+                    <div>
+                        <img src="./images/pizza.png" alt="">
+                        <span>Pizza</span>
+                    </div>
+                    <div>
+                        <img src="./images/burger.png" alt="">
+                        <span>Burger</span>
+                    </div>
+                    <div>
+                        <img src="./images/meat.png" alt="">
+                        <span>BBQ</span>
+                    </div>
+                    <div>
+                        <img src="./images/sushi.png" alt="">
+                        <span>Sushi</span>
+                    </div>
+                    <div>
+                        <img src="./images/broccoli.png" alt="">
+                        <span>Vegan</span>
+                    </div>
+                    <div>
+                        <img src="./images/cake.png" alt="">
+                        <span>Desserts</span>
+                    </div>
+                </div>
+            </section>
+            <section class="section2">
+                <h3>Nearby restaurants</h3>
+                <div class="cards">
+                    <div class="card">
+                        <span class="featured">FEATURED</span>
+                        <img class="class__img" src="./images/royalsushihouse.png" alt="">
+                        <div class="card__wrapper">
+                            <div class="card__name">
+                                <h4>Royal Sushi House</h4>
+                                <button class="shopping__cart">
+                                    <i class="ri-shopping-bag-3-line ri-1x"></i>
+                                </button>
+                            </div>
+                            <div class="card__details">
+                                <img src="./images/clock.svg" alt="">
+                                <span>30-40 min</span>
+                                <span>.</span>
+                                <span>$32 min sum</span>
+                            </div>
+                            <div class="card__categories">
+                                <div class="card__category">
+                                    <img src="./images/sushi.png" alt="">
+                                    <span>Sushi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="featured">FEATURED</span>
+                        <img class="class__img" src="./images/burgers&pizza.png" alt="">
+                        <div class="card__wrapper">
+                            <div class="card__name">
+                                <h4>Burgers & Pizza</h4>
+                                <button class="shopping__cart">
+                                    <i class="ri-shopping-bag-3-line ri-1x"></i>
+                                </button>
+                            </div>
+                            <div class="card__details">
+                                <img src="./images/clock.svg" alt="">
+                                <span>40-60 min</span>
+                                <span>.</span>
+                                <span>$24 min sum</span>
+                            </div>
+                            <div class="card__categories">
+                                <div class="card__category">
+                                    <img src="./images/burger.png" alt="">
+                                    <span>Burger</span>
+                                </div>
+                                <div class="card__category">
+                                    <img src="./images/pizza.png" alt="">
+                                    <span>Pizza</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="featured"></span>
+                        <img class="class__img" src="./images/ninjasushi.png" alt="">
+                        <div class="card__wrapper">
+                            <div class="card__name">
+                                <h4>Ninja sushi</h4>
+                                <button class="shopping__cart">
+                                    <i class="ri-shopping-bag-3-line ri-1x"></i>
+                                </button>
+                            </div>
+                            <div class="card__details">
+                                <img src="./images/clock.svg" alt="">
+                                <span>20-40 min</span>
+                                <span>.</span>
+                                <span>$40 min sum</span>
+                            </div>
+                            <div class="card__categories">
+                                <div class="card__category">
+                                    <img src="./images/sushi.png" alt="">
+                                    <span>Sushi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="featured"></span>
+                        <img class="class__img" src="./images/sushimaster.png" alt="">
+                        <div class="card__wrapper">
+                            <div class="card__name">
+                                <h4>Sushi master</h4>
+                                <button class="shopping__cart">
+                                    <i class="ri-shopping-bag-3-line ri-1x"></i>
+                                </button>
+                            </div>
+                            <div class="card__details">
+                                <img src="./images/clock.svg" alt="">
+                                <span>60-70 min</span>
+                                <span>.</span>
+                                <span>$49 min sum</span>
+                            </div>
+                            <div class="card__categories">
+                                <div class="card__category">
+                                    <img src="./images/sushi.png" alt="">
+                                    <span>Sushi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="featured"></span>
+                        <img class="class__img" src="./images/japanesesushi.png" alt="">
+                        <div class="card__wrapper">
+                            <div class="card__name">
+                                <h4>Japanese sushi</h4>
+                                <button class="shopping__cart">
+                                    <i class="ri-shopping-bag-3-line ri-1x"></i>
+                                </button>
+                            </div>
+                            <div class="card__details">
+                                <img src="./images/clock.svg" alt="">
+                                <span>30-50 min</span>
+                                <span>.</span>
+                                <span>$104 min sum</span>
+                            </div>
+                            <div class="card__categories">
+                                <div class="card__category">
+                                    <img src="./images/sushi.png" alt="">
+                                    <span>Sushi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <span class="featured"></span>
+                        <img class="class__img" src="./images/kobe.png" alt="">
+                        <div class="card__wrapper">
+                            <div class="card__name">
+                                <h4>Kobe</h4>
+                                <button class="shopping__cart">
+                                    <i class="ri-shopping-bag-3-line ri-1x"></i>
+                                </button>
+                            </div>
+                            <div class="card__details">
+                                <img src="./images/clock.svg" alt="">
+                                <span>20-30 min</span>
+                                <span>.</span>
+                                <span>$57 min sum</span>
+                            </div>
+                            <div class="card__categories">
+                                <div class="card__category">
+                                    <img src="./images/sushi.png" alt="">
+                                    <span>Sushi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="settings">
+            <section class="settings__section1">
+                <h3>Settings</h3>
+                <div class="settings__options">
+                    <div class="settings__option">
+                        <div>
+                            <img src="./images/user.svg" alt="">
+                        </div>
+                        <div class="settings__option__wrapper">
+                            <h5>Account</h5>
+                            <span>Personal information</span>
+                        </div>
+                    </div>
+                    <div class="settings__option">
+                        <div>
+                            <img src="./images/map-pin.svg" alt="">
+                        </div>
+                        <div class="settings__option__wrapper">
+                            <h5>Address</h5>
+                            <span>Shippings addresses</span>
+                        </div>
+                    </div>
+                    <div class="settings__option">
+                        <div>
+                            <img src="./images/card.svg" alt="">
+                        </div>
+                        <div class="settings__option__wrapper">
+                            <h5>Payment method</h5>
+                            <span>Connected credit cards</span>
+                        </div>
+                    </div>
+                    <div class="settings__option">
+                        <div>
+                            <img src="./images/shield.svg" alt="">
+                        </div>
+                        <div class="settings__option__wrapper">
+                            <h5>Security</h5>
+                            <span>Password, 2FA</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="settings__section2">
+                <h3>Account</h3>
+                <div class="settings__section2__wrapper">
+                    <div class="settings__section2__wrapper__wrapper">
+                        <span class="settings__title">Personal information</span>
+                        <div>
+                            <span>Avatar</span>
+                            <div class="settings__section2__wrapper__wrapper__profileChange">
+                                <img src="./images/profile.png" alt="">
+                                <button>Change</button>
+                                <button>Remove</button>
+                            </div>
+                            <form id="settings-form" action="">
+                                <fieldset>
+                                    <label for="">First name</label>
+                                    <input type="text" value="Jane">
+                                </fieldset>
+                                <fieldset>
+                                    <label for="">Last name</label>
+                                    <input type="text" value="Robertson">
+                                </fieldset>
+                                <fieldset>
+                                    <label for="">Email</label>
+                                    <input type="email" value="jane.robertson@example.com">
+                                </fieldset>
+                                <fieldset>
+                                    <label for="">Phone number</label>
+                                    <input type="text" value="(217) 555-0113">
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="settings__section2__wrapper__wrapper2">
+                        <div class="settings__section2__wrapper__warpper2__warpper">
+                            <span class="settings__title">Email notifications</span>
+                            <div class="keep__me">
+                                <input id="new-deals" type="checkbox">
+                                <label for="new-deals">New deals</label>
+                            </div>
+                            <div class="keep__me">
+                                <input id="new-restaurants" type="checkbox">
+                                <label for="new-restaurants">New restaurants</label>
+                            </div>
+                            <div class="keep__me">
+                                <input id="order-statuses" type="checkbox">
+                                <label for="order-statuses">Order statuses</label>
+                            </div>
+                            <div class="keep__me">
+                                <input id="password-changes" type="checkbox">
+                                <label for="password-changes">Password changes</label>
+                            </div>
+                            <div class="keep__me">
+                                <input id="special-offers" type="checkbox">
+                                <label for="special-offers">Special offers</label>
+                            </div>
+                            <div class="keep__me">
+                                <input id="newsletter" type="checkbox">
+                                <label for="newsletter">Newsletter</label>
+                            </div>
+                        </div>
+
+                        <button id="logoutBtn">Log out</button>
+                        <div class="settings__btns">
+                            <button id="discardBtn">Discard changes</button>
+                            <button id="saveBtn">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
 <script src="script.js"></script>
 </body>
