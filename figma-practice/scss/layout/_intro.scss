@@ -1,14 +1,79 @@
 @use 'main' as *;
 
 .first__page {
-    
+    @include display(flex);
+    flex-direction: column;
+    max-width: 100%;
+    @media(min-width: 1180px) {
+        flex-direction: row;
+        padding: 0;
+        padding-inline: 0 !important;
+    }
+}
+
+.intro {
+    flex: 2.5;
     display: none;
+    background-color: var(--clr-blue);
+    @media(min-width: 1180px) {
+        @include display(grid,0, center, center, center);
+        padding: 84px 65px;
+
+        &__title {
+            font-size: 2.286rem;
+            color: var(--clr-white);
+            font-weight: 600;
+            
+        }
+        &__subtitle {
+            font-size: 1rem;
+            color: var(--clr-white);
+        }
+        &__dots {
+            letter-spacing: 0.2rem;
+            font-size: 4.5rem;
+            color: var(--clr-white);
+            height: 10px;
+        }
+    }
+
+    &__designs {
+        position: relative;
+        margin-top: 4rem;
+        & > * {
+            position: absolute
+        }
+    }
+    &__design1 {
+        
+        top: 5rem;
+        left: -5rem;
+        z-index: 3;
+    }
+    &__design2 {
+        top: -20rem;
+        left: -3.5rem
+    }
+    &__design3 {
+        top: -16rem;
+        left: 16rem
+    }
+
+    &__info {
+        @include display (grid, 1rem);
+        align-self: end;
+    }
 }
 
 
 .login {
     @include display(grid, 4.286rem, center);
+    flex: 1;
 
+    @media(min-width: 1180px) {
+        padding: 1.429rem;
+        padding-inline: clamp(1.071rem, -2.5006666666666666rem + 15.874074074074073vw, 11.786rem);
+    }
     &__grid__wrapper {
         @include display(grid, 2.286rem);
     }

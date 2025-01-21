@@ -7,10 +7,21 @@
 }
 
 
-
+.mobile {
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+.desktop {
+    @media (max-width: 767.8px) {
+        display: none;
+    }
+}
 header {
-    @include display(flex, 0, center, space-between);
+    @include display(none, 0, center, space-between);
     border-bottom: 1px solid var(--clr-gray);
+    padding: 1.429rem 1.071rem;
+    padding-inline: clamp(1.071rem, -2.5006666666666666rem + 15.874074074074073vw, 11.786rem);
     padding-bottom: 20px;
 
     .header__wrapper {
@@ -41,6 +52,7 @@ header {
     }
     #profile {
         width: 3.429rem;
+        cursor: pointer;
     }
 
     #menuBtn {
@@ -50,13 +62,20 @@ header {
         img {
             width: 1.143rem;
         }
+        cursor: pointer;
     }
 }
 
 .main {
-    @include display(grid, 40px, center, center);
+    @include display(none, 40px, center, center);
+    flex-direction: column;
     margin-top: 24px;
-    display: none !important;
+    width: 100%;
+    padding: 1.429rem 1.071rem;
+    padding-inline: clamp(1.071rem, -2.5006666666666666rem + 15.874074074074073vw, 11.786rem);
+    & > * {
+        width: 100%;
+    }
 
     .section1 {
         @include display(grid, 32px);
@@ -65,8 +84,17 @@ header {
             @include display(flex, 30px);
             flex-direction: column;
             
+            @media (min-width: 768px) {
+                flex-direction: row;
+            }
+
             &__wrapper {
                 @include display (flex, 0 , center, space-between);
+
+                @media(min-width: 768px) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
                 margin-bottom: 4px;
             }
             span {
@@ -79,7 +107,7 @@ header {
             }
             & > * {
                 padding: 16px 16px 0 16px;
-                border-radius: 16px;
+        
             }
 
             &__dessert {
@@ -96,12 +124,31 @@ header {
                     color: var(--clr-orange);
                 }
             }
+
+            @media (min-width: 968px) {
+                &__dessert, &__food {
+                    @include display(flex,);
+                    flex-direction: row-reverse;
+                    max-width: 100%;
+                    width: 100%;
+
+                };
+                
+                .skibidi {
+                    @include display(flex, 0, flex-start, space-between, left);
+                    flex-direction: column;
+                    padding-bottom: 16px
+                }
+            }
         }
 
         .food__categories {
             @include display(grid, 15px, center, center, center);
             grid-template-columns: repeat(3, 1fr);
             
+            @media(min-width: 768px) {
+                grid-template-columns: repeat(6, 1fr);
+            }
             div {
                 @include display(grid, 12px);
                 margin: auto;
@@ -123,12 +170,22 @@ header {
     }
 
     .section2 {
-        @include display(grid, 16px);
-
+        @include display(flex, 16px);
+        flex-direction: column;
         .cards {
             @include display(grid, 30px, center, center);
-            position: relative;
+            width: 100%;
+            .card {
+                position: relative;
+                transition: transform 0.3s ease;
+                &:hover {
+                    transform: scale(1.03);
+                }
+            }
 
+            @media(min-width: 768px) {
+                grid-template-columns: repeat(auto-fit, 25rem);
+            }
             .featured {
                 position: absolute;
                 right: 0;
@@ -145,6 +202,10 @@ header {
                 border: 1px solid var(--clr-lightGray2);
                 border-radius: 16px;
                 overflow: hidden;
+
+                .class__img {
+                    width: 100%;
+                }
 
                 &__wrapper {
                     @include display(grid, 14px);

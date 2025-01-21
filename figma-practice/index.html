@@ -45,12 +45,21 @@
         </div>
 
         <div class="intro">
-
+            <div class="intro__designs">
+                <img class="intro__design1" src="./images/horizontal.png" alt="">
+                <img class="intro__design2" src="./images/reviews.png" alt="">
+                <img class="intro__design3" src="./images/squared.png" alt="">
+            </div>
+            <div class="intro__info">
+                <span class="intro__title">Leave reviews for all meals</span>
+                <span class="intro__subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est soluta inventore tenetur sapiente? Ea minus iure aliquam facere ut tempora, accusamus impedit praesentium nemo repellendus in illo cum ducimus similique.</span>
+                <span class="intro__dots">....</span>
+            </div>
         </div>
     </div>
 
     <main>
-        <header>
+        <header class="header">
             <img id="logo" src="./images/logo.png" alt="">
             
             <div class="header__wrapper">
@@ -58,8 +67,8 @@
                     <i class="ri-shopping-bag-3-line"></i>
                 </a> 
                 <img id="profile" src="./images/profile.png" alt="">
-                <hr>
-                <span id="menuBtn">
+                <hr class="mobile">
+                <span id="menuBtn" class="mobile">
                     <img src="./images/menu.svg" alt="">
                 </span>
             </div>
@@ -68,19 +77,27 @@
             <section class="section1">
                 <div class="discounts">
                     <div class="discounts__dessert">
-                        <div class="discounts__wrapper">
-                            <h3>All desserts</h3>
-                            <span>Desserty</span>
+                        <div class="skibidi">
+                            <div class="discounts__wrapper">
+                                <h3>All desserts</h3>
+                                <span class="mobile">Desserty</span>
+                                <h1 class="desktop">20% OFF</h1>
+                            </div>
+                            <h1 class="mobile">20% OFF</h1>
+                            <span class="desktop">Desserty</span>
                         </div>
-                        <h1>20% OFF</h1>
                         <img src="./images/cupcake.png" alt="">
                     </div>
                     <div class="discounts__food">
-                        <div class="discounts__wrapper">
-                            <h3>Big Burgers</h3>
-                            <span>Foodies</span>
+                        <div class="skibidi">
+                            <div class="discounts__wrapper">
+                                <h3>All foods</h3>
+                                <span class="mobile">Foody</span>
+                                <h1 class="desktop">50% OFF</h1>
+                            </div>
+                            <h1 class="mobile">50% OFF</h1>
+                            <span class="desktop">Foody</span>
                         </div>
-                        <h1>50% OFF</h1>
                         <img src="./images/burgerBg.png" alt="">
                     </div>
                 </div>
@@ -167,7 +184,6 @@
                         </div>
                     </div>
                     <div class="card">
-                        <span class="featured"></span>
                         <img class="class__img" src="./images/ninjasushi.png" alt="">
                         <div class="card__wrapper">
                             <div class="card__name">
@@ -191,7 +207,6 @@
                         </div>
                     </div>
                     <div class="card">
-                        <span class="featured"></span>
                         <img class="class__img" src="./images/sushimaster.png" alt="">
                         <div class="card__wrapper">
                             <div class="card__name">
@@ -215,7 +230,6 @@
                         </div>
                     </div>
                     <div class="card">
-                        <span class="featured"></span>
                         <img class="class__img" src="./images/japanesesushi.png" alt="">
                         <div class="card__wrapper">
                             <div class="card__name">
@@ -239,7 +253,6 @@
                         </div>
                     </div>
                     <div class="card">
-                        <span class="featured"></span>
                         <img class="class__img" src="./images/kobe.png" alt="">
                         <div class="card__wrapper">
                             <div class="card__name">
@@ -268,42 +281,40 @@
         <div class="settings">
             <section class="settings__section1">
                 <h3>Settings</h3>
-                <div class="settings__options">
-                    <div class="settings__option">
-                        <div>
-                            <img src="./images/user.svg" alt="">
-                        </div>
-                        <div class="settings__option__wrapper">
-                            <h5>Account</h5>
-                            <span>Personal information</span>
-                        </div>
+                <div tabindex="0" class="settings__option">
+                    <div>
+                        <img src="./images/user.svg" alt="">
                     </div>
-                    <div class="settings__option">
-                        <div>
-                            <img src="./images/map-pin.svg" alt="">
-                        </div>
-                        <div class="settings__option__wrapper">
-                            <h5>Address</h5>
-                            <span>Shippings addresses</span>
-                        </div>
+                    <div class="settings__option__wrapper">
+                        <h5>Account</h5>
+                        <span>Personal information</span>
                     </div>
-                    <div class="settings__option">
-                        <div>
-                            <img src="./images/card.svg" alt="">
-                        </div>
-                        <div class="settings__option__wrapper">
-                            <h5>Payment method</h5>
-                            <span>Connected credit cards</span>
-                        </div>
+                </div>
+                <div tabindex="0" class="settings__option">
+                    <div>
+                        <img src="./images/map-pin.svg" alt="">
                     </div>
-                    <div class="settings__option">
-                        <div>
-                            <img src="./images/shield.svg" alt="">
-                        </div>
-                        <div class="settings__option__wrapper">
-                            <h5>Security</h5>
-                            <span>Password, 2FA</span>
-                        </div>
+                    <div class="settings__option__wrapper">
+                        <h5>Address</h5>
+                        <span>Shippings addresses</span>
+                    </div>
+                </div>
+                <div tabindex="0" class="settings__option">
+                    <div>
+                        <img src="./images/card.svg" alt="">
+                    </div>
+                    <div class="settings__option__wrapper">
+                        <h5>Payment method</h5>
+                        <span>Connected credit cards</span>
+                    </div>
+                </div>
+                <div tabindex="0" class="settings__option">
+                    <div>
+                        <img src="./images/shield.svg" alt="">
+                    </div>
+                    <div class="settings__option__wrapper">
+                        <h5>Security</h5>
+                        <span>Password, 2FA</span>
                     </div>
                 </div>
             </section>
@@ -313,12 +324,12 @@
                 <div class="settings__section2__wrapper">
                     <div class="settings__section2__wrapper__wrapper">
                         <span class="settings__title">Personal information</span>
-                        <div>
+                        <div class="giddy">
                             <span>Avatar</span>
                             <div class="settings__section2__wrapper__wrapper__profileChange">
-                                <img src="./images/profile.png" alt="">
-                                <button>Change</button>
-                                <button>Remove</button>
+                                <img src="./images/main avatar.png" alt="">
+                                <button id="changeBtn">Change</button>
+                                <button id="removeBtn">Remove</button>
                             </div>
                             <form id="settings-form" action="">
                                 <fieldset>
@@ -342,38 +353,42 @@
                     </div>
 
                     <div class="settings__section2__wrapper__wrapper2">
-                        <div class="settings__section2__wrapper__warpper2__warpper">
+                        <div class="settings__section2__wrapper__wrapper2__wrapper">
                             <span class="settings__title">Email notifications</span>
-                            <div class="keep__me">
-                                <input id="new-deals" type="checkbox">
-                                <label for="new-deals">New deals</label>
-                            </div>
-                            <div class="keep__me">
-                                <input id="new-restaurants" type="checkbox">
-                                <label for="new-restaurants">New restaurants</label>
-                            </div>
-                            <div class="keep__me">
-                                <input id="order-statuses" type="checkbox">
-                                <label for="order-statuses">Order statuses</label>
-                            </div>
-                            <div class="keep__me">
-                                <input id="password-changes" type="checkbox">
-                                <label for="password-changes">Password changes</label>
-                            </div>
-                            <div class="keep__me">
-                                <input id="special-offers" type="checkbox">
-                                <label for="special-offers">Special offers</label>
-                            </div>
-                            <div class="keep__me">
-                                <input id="newsletter" type="checkbox">
-                                <label for="newsletter">Newsletter</label>
+                            <div class="lebron">
+                                <div class="keep__me">
+                                    <input id="new-deals" type="checkbox">
+                                    <label for="new-deals">New deals</label>
+                                </div>
+                                <div class="keep__me">
+                                    <input id="new-restaurants" type="checkbox">
+                                    <label for="new-restaurants">New restaurants</label>
+                                </div>
+                                <div class="keep__me">
+                                    <input id="order-statuses" type="checkbox">
+                                    <label for="order-statuses">Order statuses</label>
+                                </div>
+                                <div class="keep__me">
+                                    <input id="password-changes" type="checkbox">
+                                    <label for="password-changes">Password changes</label>
+                                </div>
+                                <div class="keep__me">
+                                    <input id="special-offers" type="checkbox">
+                                    <label for="special-offers">Special offers</label>
+                                </div>
+                                <div class="keep__me">
+                                    <input id="newsletter" type="checkbox">
+                                    <label for="newsletter">Newsletter</label>
+                                </div>
                             </div>
                         </div>
 
-                        <button id="logoutBtn">Log out</button>
-                        <div class="settings__btns">
-                            <button id="discardBtn">Discard changes</button>
-                            <button id="saveBtn">Save changes</button>
+                        <div class="curry">
+                            <button id="logoutBtn">Log out</button>
+                            <div class="settings__btns">
+                                <button id="discardBtn">Discard changes</button>
+                                <button id="saveBtn">Save changes</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -381,6 +396,6 @@
         </div>
     </main>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

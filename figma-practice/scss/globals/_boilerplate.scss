@@ -23,8 +23,12 @@ body {
     height: 100%;
 
     & > * {
-        padding: 1.429rem 1.071rem;
+        width: 100%;
+
+        max-width: 1440px;
+        margin: auto;
     }
+    color: var(--clr-black);
 }
 
 
