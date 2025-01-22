@@ -22,3 +22,4 @@ logoutBtn.addEventListener('click', () => {
     introContainer.style.display = "flex"; 
     headerContainer.style.display = "none";
 })
+
